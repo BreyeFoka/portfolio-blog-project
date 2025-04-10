@@ -10,8 +10,11 @@ export default function HomePage() {
           <a href="/projects" className="px-5 py-2 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition">
             View Projects
           </a>
+          <a href="/about" className="px-5 py-2 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 dark:hover:bg-zinc-800 transition">
+            <strong>Who am I ?</strong>
+          </a>
           <a href="/blog" className="px-5 py-2 border border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 dark:hover:bg-zinc-800 transition">
-            Read Blog
+            Read Blog 
           </a>
         </div>
       </div>
