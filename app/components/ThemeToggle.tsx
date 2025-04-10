@@ -27,6 +27,9 @@ const ThemeToggle = () => {
       localStorage.setItem("theme", "dark");
       setIsDarkMode(true);
     }
+        // Play tick sound
+        // const tick = new Audio("/tick.mp3");
+        // tick.play();
   };
 
   return (
