@@ -22,8 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <DotGrid position="right" rows={12} cols={8} /> */}
           {/* Main content */}
           {children}</main>
+          <Footer/>
       </body>
-      <Footer/>
+
     </html>
   );
 }
