@@ -2,6 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { Metadata } from "next";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 // import DotGrid from "./components/DotGrids";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* Main content */}
           {children}</main>
       </body>
+      <Footer/>
     </html>
   );
 }
