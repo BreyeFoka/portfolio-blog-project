@@ -32,12 +32,11 @@ export default function Navbar() {
             <span className="inline lg:hidden">Br. F.</span>
             <span className="hidden lg:inline">Breye Foka L.</span>
           </Link>
-
-          <Link href="/mission" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Mission</Link>
           <Link href="/about" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">About</Link>
+          <Link href="/mission" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Mission</Link>
           <Link href="/skillset" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Skillset</Link>
           <Link href="/projects" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Projects</Link>
-          <Link href="/press" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Press</Link>
+          <Link href="/press" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">BLog</Link>
 
           <div className="relative">
             <button
