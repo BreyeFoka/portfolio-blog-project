@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link href="/mission" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Mission</Link>
           <Link href="/skillset" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Skillset</Link>
           <Link href="/projects" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Projects</Link>
-          <Link href="/press" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Blog</Link>
+          <Link href="/blog" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Blog</Link>
 
           {/* Other Dropdown */}
           <div className="relative">

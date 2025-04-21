@@ -1,11 +1,7 @@
-"use client";
-import Head from 'next/head';
-import dynamic from 'next/dynamic';
-import { FaBullseye, FaEye, FaHeart, FaRocket, FaGlobe, FaPaperPlane } from 'react-icons/fa';
-import { FaInstagram, FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 
-// Dynamically import GitHubCalendar to avoid SSR issues
-const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
+import Head from 'next/head';
+import { FaEye, FaHeart, FaRocket } from 'react-icons/fa';
+
 
 export default function Mission() {
   return (
