@@ -2,11 +2,16 @@
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaTwitter, FaGithub, FaPaperPlane } from 'react-icons/fa';
 import dynamic from 'next/dynamic';
-
+import { usePathname } from 'next/navigation';
 const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
 
 export default function Footer() {
-  return (
+    const pathname = usePathname();
+
+    if (pathname === '/'){
+        return null; // Don't render the footer on the home page
+    }else {
+        return (
     <footer className="bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white transition-colors">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 flex flex-col items-center">
         {/* Contributions */}
@@ -66,7 +71,7 @@ export default function Footer() {
   );
 }
 
-
+}
 
  
 

@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.0",
     "@supabase/supabase-js": "^2.49.4",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.3",
     "lucide-react": "^0.487.0",
@@ -21,6 +23,10 @@
     "react-github-calendar": "^4.5.6",
     "react-icons": "^5.5.0",
     "react-markdown": "^10.1.0",
+    "react-tsparticles": "^2.12.2",
+    "tailwind-animate": "^0.2.10",
+    "tailwind-merge": "^3.2.0",
+    "tsparticles": "^3.8.1",
     "ui": "github:shadcn/ui"
   },
   "devDependencies": {
@@ -34,6 +40,7 @@
     "eslint-config-next": "15.3.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.3",
+    "tw-animate-css": "^1.2.7",
     "typescript": "^5"
   }
 }
