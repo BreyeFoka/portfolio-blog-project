@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link href="/mission" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Mission</Link>
           <Link href="/skillset" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Skillset</Link>
           <Link href="/projects" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Projects</Link>
-          <Link href="/blog" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Blog</Link>
+          <Link href="/posts" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Blog</Link>
 
           {/* Other Dropdown */}
           <div className="relative">
@@ -53,7 +53,6 @@ export default function Navbar() {
             {isDropdownOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 rounded-lg shadow-md z-20">
                 <Link href="/talks" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700">🎙️ Talks</Link>
-                <Link href="/flying" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700">✈️ Flying</Link>
                 <Link href="/writing" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700">🖋️ Writing</Link>
                 <Link href="/achievements" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-700">✔️ Achievements</Link>
               </div>
@@ -92,7 +91,6 @@ export default function Navbar() {
             <summary className="cursor-pointer font-semibold">Other</summary>
             <div className="pl-4 mt-2 space-y-1 text-sm">
               <Link href="/talks" onClick={() => setMobileMenuOpen(false)}>🎙️ Talks</Link>
-              <Link href="/flying" onClick={() => setMobileMenuOpen(false)}>✈️ Flying</Link>
               <Link href="/writing" onClick={() => setMobileMenuOpen(false)}>🖋️ Writing</Link>
               <Link href="/achievements" onClick={() => setMobileMenuOpen(false)}>✔️ Achievements</Link>
             </div>
