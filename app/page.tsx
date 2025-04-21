@@ -57,6 +57,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
+// import ParticlesBackground from './components/PartclesBackground';
 
 export default function HomePage() {
   return (
@@ -70,6 +71,7 @@ export default function HomePage() {
       </Head>
 
       <main className="flex min-h-screen flex-col justify-center items-center bg-white dark:bg-zinc-900 text-center px-4 sm:px-6">
+      {/* <ParticlesBackground /> */}
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
