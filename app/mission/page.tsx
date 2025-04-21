@@ -58,13 +58,13 @@ export default function Mission() {
         <section id="impact">
           <h2 className="text-3xl font-bold">🚀 Impact &amp; Motivation</h2>
           <p className="mt-4 text-lg leading-relaxed">
-            Motivated by my family's sacrifices, my country, and the drive to make a tangible difference. I channel my passion for math, physics, and programming to tackle real-world problems—because tech without impact is just code.
+            Motivated by my family’s sacrifices, my country, and the drive to make a tangible difference. I channel my passion for math, physics, and programming to tackle real-world problems—because tech without impact is just code.
           </p>
         </section>
 
         {/* Connect Section */}
         <section id="connect">
-          <h2 className="text-3xl font-bold">🤝 Let's Collaborate</h2>
+          <h2 className="text-3xl font-bold">🤝 Let’Us Collaborate</h2>
           <p className="mt-4 text-lg">
             Whether it’s cybersecurity, data science, or robotics, I’m always up for meaningful projects. Want to partner? Have a challenge? Let’s talk.
           </p>
