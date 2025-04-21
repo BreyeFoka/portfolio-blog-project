@@ -74,35 +74,6 @@ export default function Mission() {
           </p>
         </section>
       </main>
-
-      {/* Footer with GitHub Calendar & Social Links */}
-      <footer className="bg-gray-100 dark:bg-zinc-900 py-10 mt-20">
-        <div className="container mx-auto px-6 space-y-6">
-          <h2 className="text-2xl font-bold">GitHub Contributions</h2>
-          <div>
-            <GitHubCalendar username="BreyeFoka" />
-          </div>
-
-          <div className="flex space-x-6 mt-6 justify-center">
-            <a href="https://instagram.com/breye_foka" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram size={28} />
-            </a>
-            <a href="https://linkedin.com/in/breyefokalagloire" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FaLinkedin size={28} />
-            </a>
-            <a href="https://twitter.com/breye_foka" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter size={28} />
-            </a>
-            <a href="https://github.com/BreyeFoka" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <FaGithub size={28} />
-            </a>
-          </div>
-
-          <p className="mt-4 text-lg flex items-center justify-center gap-3">
-            <FaPaperPlane size={30}/> <a href="mailto:breyefokalagloire@gmail.com" className="underline text-xl font-bold">breyefokalagloire@gmail.com</a>
-          </p>
-        </div>
-      </footer>
     </>
   );
 }

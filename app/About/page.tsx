@@ -1,12 +1,5 @@
-'use client';
 import Head from 'next/head';
-import dynamic from 'next/dynamic';
 import { SiPython, SiJavascript, SiCplusplus, SiTypescript, SiReact, SiNodedotjs, SiNextdotjs, SiTailwindcss, SiDocker, SiGit } from 'react-icons/si';
-import { FaInstagram, FaLinkedin, FaTwitter, FaGithub, FaPaperPlane } from 'react-icons/fa';
-
-// Dynamically import GitHubCalendar to avoid SSR issues
-const GitHubCalendar = dynamic(() => import('react-github-calendar'), { ssr: false });
-
 export default function About() {
   return (
     <>
@@ -14,13 +7,12 @@ export default function About() {
         <title>About Me - Breye Foka L.</title>
         <meta name="description" content="About Me page for Breye Foka L., tech-obsessed CS undergrad" />
       </Head>
-
       <main className="container mx-auto px-6 py-10 space-y-16">
         {/* About Section */}
         <section id="about">
           <h1 className="text-4xl font-bold">👨‍💻 About Me</h1>
           <p className="mt-4 text-lg leading-relaxed">
-            Hey, I'm <span className="font-semibold">Breye Foka L.</span>, a tech-obsessed Computer Science undergrad driven by curiosity, creativity, and a mission to make a real impact.
+            Hey, I am <span className="font-semibold">Breye Foka L.</span>, a tech-obsessed Computer Science undergrad driven by curiosity, creativity, and a mission to make a real impact.
           </p>
           <p className="mt-4 text-lg leading-relaxed">
             I’m passionate about science, electronics, programming, and pretty much anything that makes systems tick. I grew up tearing things apart to see how they worked—and now I’m building things that help people. Whether it’s writing Python for a data science pipeline or poking around a network for ethical hacking practice, I’m in my element when I’m solving real-world problems with code.
@@ -46,7 +38,7 @@ export default function About() {
 
         {/* Tech Stack Section */}
         <section id="tech-stack">
-          <h2 className="text-3xl font-bold">🛠 Tech Stack &amp; Tools</h2>
+          {/* <h2 className="text-3xl font-bold">🛠 Tech Stack &amp; Tools</h2>
           <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
             <div className="flex flex-col items-center">
               <SiPython size={48} />
@@ -88,7 +80,7 @@ export default function About() {
               <SiGit size={48} />
               <span className="mt-2">Git</span>
             </div>
-          </div>
+          </div> */}
           <div className="mt-6 text-lg space-y-2">
             <p>🔍 Currently Obsessed With:</p>
             <ul className="list-disc list-inside">
@@ -152,34 +144,6 @@ export default function About() {
         </section>
       </main>
 
-      {/* Footer with GitHub Calendar & Social Links */}
-      <div className="bg-gray-100 dark:bg-zinc-900 py-10 mt-20">
-        <div className="container mx-auto px-6 space-y-6">
-          <div >
-            <h2 className="text-2xl font-bold">GitHub Contributions</h2>
-            <GitHubCalendar username="BreyeFoka" />
-          </div>
-
-          <div className="flex space-x-6 mt-6 items-center justify-center">
-            <a href="https://instagram.com/yourInstagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram size={28} />
-            </a>
-            <a href="https://linkedin.com/in/yourLinkedIn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <FaLinkedin size={28} />
-            </a>
-            <a href="https://twitter.com/yourTwitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter size={28} />
-            </a>
-            <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <FaGithub size={28} />
-            </a>
-          </div>
-          <p className="mt-4 text-lg flex items-center justify-center gap-3">
-            <FaPaperPlane height={25} width={25}/> <a href="mailto:breyefokalagloire@gmail.com" className="underline text-xl font-bold">breyefokalagloire@gmail.com</a>
-          </p>
-          
-        </div>
-      </div>
     </>
   );
 }
