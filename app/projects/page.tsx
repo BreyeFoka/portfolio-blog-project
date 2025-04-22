@@ -43,10 +43,92 @@ const projects = [
     title: 'Sarcastic Advisor',
     image: '/images/sarcastic-advisor.png',
     description: 'An app that gives sarcastic advices each time you click on the button',
-    tech: ['React', 'Next.js', 'Tailwind CSS', 'Typescript', 'API', 'Node.js'],
+    tech: ['React', 'Tailwind CSS', 'Typescript', 'API', 'Node.js'],
     github: 'hhttps://github.com/BreyeFoka/Advisor-react.git',
     live: 'https://sarcasticadvisor.netlify.app/',
     blogSlug: 'sarcastic-advisor',
+  },
+  {
+    title: 'Daddy Laugh',
+    image: '/images/daddylaugh.png',
+    description: 'A simple web application built with React that fetches random dad jokes from an API and displays them in a glassmorphism-styled card.',
+    tech: ['React', 'Tailwind CSS','Axios', 'API', 'Node.js'],
+    github: 'hhttps://github.com/BreyeFoka/daddylaugh.git',
+    live: 'https://daddylaugh.netlify.app/',
+    blogSlug: 'daddylaugh',
+  },
+  {
+    title: 'Daddy Laugh',
+    image: '/images/shop.png',
+    description: 'Shop-management-System built using php and mysal and runs on Xampp',
+    tech: ['PHP', 'MySQL', 'XAMPP'],
+    github: 'hhttps://github.com/BreyeFoka/shop.git',
+    live: '',
+    blogSlug: 'shop-management-system',
+  },
+  {
+    title: 'Morse Code Translator',
+    image: '/images/morse-code.png',
+    descrption: 'A simple app that converts the normal message to morse code and vice versa, entirely written in python with a tk user interface..',
+    tech: ['Python', 'Tkinter'],
+    github: 'https://github.com/BreyeFoka/text_to_morse_code.git',
+    live: '',
+    blogSlug: 'morse-code-translator'
+  },
+  {
+    title: 'Arduino Self Driving Robot',
+    image: '/images/self-driving-robot.png',
+    description: 'An Arduino-based self-driving robot that uses ultrasonic sensors and infrared sensors for obstacle detection and avoidance.',
+    tech: ['Arduino', 'Ultrasonic Sensor', 'Infrared Sensor'],
+    github: 'https://github.com/BreyeFoka/Arduino_Follow_Me_Robot.git',
+    live: '',
+    blogSlug: 'self-driving-robot',
+  },
+  {
+    title: 'Expense Tracker',
+    image: '/images/expense-tracker.png',
+    description: 'A mobile  application(flutter & dart) that helps users track their expenses and manage their budget effectively.',
+    tech: ['Flutter', 'Dart'],
+    github: 'https://github.com/BreyeFoka/expense_tracker.git',
+    live: '',
+    blogSlug: 'expense-tracker',
+  },
+  {
+    title: 'Python Air Painting',
+    image: '/images/air-painting.png',
+    description: 'A Python project that uses OpenCV and MediaPipe to create an air painting application.',
+    tech: ['Python', 'OpenCV', 'MediaPipe', 'numpy'],
+    github: 'https://github.com/BreyeFoka/hand_detection/tree/master.git',
+    live: '',
+    blogSlug: 'air-painting',
+  },
+  {
+    title: 'Sticker Smash',
+    image: '/images/sticker-smash.png',
+    description: 'A mobile app built with Expo and react native that allows users to create, edit and share stickers and photos.',
+    tech: ['React Native', 'Expo'],
+    github: 'https://github.com/BreyeFoka/StickerSmash.git',
+    live:'',
+    blogSlug: 'sticker-smash',
+  },
+  {
+    title: 'Enigma Encryption',
+    image: '/images/enigma.png',
+    description: 'A Python project that implements the Enigma machine encryption algorithm.',
+    tech: ['Python', 'tkinter'],
+    github:'https://github.com/BreyeFoka/enigma-machine',
+    live: '',
+    blogSlug: 'enigma-machine',
+  },
+  {
+    title: 'Tic-Tac-Toe Swift',
+    image: '/images/tictactoe.png',
+    description:'Simple tictac toe game using swift ui',
+    tech: ['Swift UI'],
+    github: 'https://github.com/BreyeFoka/Tic-Tac-Toe_Swift.git',
+    live: '',
+    blogslug: 'SwiftUI Game',
+
   }
 ];
 
@@ -74,7 +156,7 @@ export default function ProjectsPage() {
             <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
               {project.description}{' '}
               <Link
-                href={`/blog/${project.blogSlug}`}
+                href={`/posts/${project.blogSlug}`}
                 className="text-blue-500 hover:underline"
               >
                 Read more →

@@ -84,10 +84,10 @@ export default function HomePage() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
+          transition={{ delay: 0.3, duration: 0.7 }}
           className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-4"
         >
-          Computer Science undergrad | Cybersecurity | Data Science | Innovation-obsessed | Making impact with tech
+          Computer Science undergrad | Cybersecurity | Data Science & AI | Robotics & IoT | Making impact with tech
         </motion.p>
 
         <motion.p
@@ -141,9 +141,9 @@ export default function HomePage() {
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 0.1, y: 0 }}
+          animate={{ opacity: 0.2, y: 0 }}
           transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-10 text-sm text-gray-400 dark:text-gray-500"
+          className="absolute bottom-10 text-sm text-gray-950 font-bold dark:text-gray-500"
         >
           © {new Date().getFullYear()} Breye Foka L. All rights reserved.
         </motion.div>
