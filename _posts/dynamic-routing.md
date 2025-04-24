@@ -1,8 +1,8 @@
 ---
-title: "Dynamic Routing and Static Generation"
-excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
+title: "Dynamic Routing and Static Generation in Next.js"
+excerpt: "Learn how to implement dynamic routing in Next.js using static generation for improved performance and SEO."
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+date: "2025-04-24T20:19:37.000Z"
 author:
   name: JJ Kasper
   picture: "/assets/blog/authors/jj.jpeg"
@@ -10,10 +10,84 @@ ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+Dynamic routing is a powerful feature in Next.js that enables developers to create routes with dynamic parameters, making it ideal for applications like blogs, e-commerce sites, and more. Combined with static generation, it ensures high performance and excellent SEO capabilities.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+## What is Dynamic Routing?
 
-## Lorem Ipsum
+In Next.js, dynamic routing is achieved using a file-based routing system. You can define dynamic routes by including square brackets (`[ ]`) in your file names within the `pages` directory.
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+For example:
+```plaintext
+pages/post/[id].js
+This file will match routes like /post/1, /post/2, and so on. The id in the file name becomes a route parameter accessible in your component.
+
+Static Generation with getStaticPaths
+To pre-render pages with dynamic routes at build time, you can use the getStaticPaths function. It allows you to specify which paths should be generated statically.
+
+Here’s an example:
+
+JavaScript
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { id: '1' } },
+      { params: { id: '2' } },
+    ],
+    fallback: false, // Can also be 'true' or 'blocking'
+  };
+}
+paths: An array of objects specifying the routes to pre-render.
+fallback: Determines behavior for routes not specified in paths.
+Fetching Data with getStaticProps
+To provide data to the dynamically generated pages, use the getStaticProps function. It fetches the data for a specific route based on the parameters provided.
+
+Example:
+
+JavaScript
+export async function getStaticProps({ params }) {
+  const post = await fetchPostData(params.id);
+  return {
+    props: {
+      post,
+    },
+  };
+}
+In this example, params.id refers to the dynamic id defined in the route.
+
+Fallback Behavior
+The fallback option in getStaticPaths determines how Next.js handles routes that were not pre-rendered:
+
+fallback: false: Routes not returned by getStaticPaths will result in a 404 error.
+fallback: true: The page will be generated server-side when requested for the first time, then cached for future requests.
+fallback: 'blocking': The server waits until the page is generated before serving it to the user.
+Benefits of Dynamic Routing with Static Generation
+SEO-Friendly: Pre-rendered pages are optimized for search engines.
+Performance: Static pages load faster and reduce server load.
+Scalability: Ideal for use cases like blogs, product pages, or portfolios.
+Example Use Case: Blog Application
+Suppose you have a blog application where each post has a unique ID. Here’s how you can set it up:
+
+Create a file: pages/blog/[id].js.
+Use getStaticPaths to define which posts are pre-rendered.
+Use getStaticProps to fetch the content for each post.
+JavaScript
+export async function getStaticPaths() {
+  const posts = await fetchAllPosts();
+  const paths = posts.map((post) => ({
+    params: { id: post.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const post = await fetchPostData(params.id);
+  return {
+    props: {
+      post,
+    },
+  };
+}
+This setup ensures that your blog has high-performance pages with excellent SEO while maintaining flexibility for dynamic content.
+
+Dynamic routing and static generation in Next.js provide a powerful combination for building modern web applications. By leveraging these features, you can create scalable, SEO-friendly, and high-performance websites tailored to your needs.
