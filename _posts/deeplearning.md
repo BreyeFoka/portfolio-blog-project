@@ -1,13 +1,13 @@
 ---
 title: "Understanding the Core Concepts of Deep Learning with MIT 6.S191"
 excerpt: "Join me on a journey through the foundational principles of deep learning as taught in the MIT 6.S191 course. From perceptrons to regularization, we explore the mechanics that power neural networks today."
-coverImage: "/assets/blog/deep-learning-journey/cover.jpg"
+coverImage: "/assets/blog/deeplearning/cover.jpg"
 date: "2025-04-29T10:00:00.000Z"
 author:
-  name: Breye
-  picture: "/assets/blog/authors/breye.jpeg"
+  name: Breye Foka
+  picture: "/assets/blog/authors/breye.png"
 ogImage:
-  url: "/assets/blog/deep-learning-journey/cover.jpg"
+  url: "/assets/blog/deeplearning/cover.jpg"
 ---
 
 ## 🧠 The Building Block: Perceptron
@@ -16,10 +16,12 @@ The perceptron is the simplest type of artificial neuron. It's modeled after bio
 
 **Forward propagation** for a single perceptron can be written as:
 
-```math
+$$
 z = \sum_{i=1}^{n} w_i x_i + b \\
 a = \phi(z)
+$$
 
+```math
 Where:
 •	xix_ixi are input features
 •	wiw_iwi are weights
