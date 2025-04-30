@@ -1,13 +1,13 @@
 ---
 title: "Building a Neural Network from Scratch for MNIST Digit Classification"
 excerpt: "Join me on my journey to build a neural network from scratch. Neural Networks are fascinating fruits of mathematics that find their application in Deep learning. Understanding the fundamentals concepts is crucial. I engaged myself in the project of building a neural network to solve an actual machine learning problem using only python and numpy library. In order to grasp the full concepts we need to be able to build it from scratch"
-coverImage: "/assets/blog/deeplearning/cover.jpg"
+coverImage: "/assets/blog/nnfromscratch/cover.jpg"
 date: "2025-04-30T10:00:00.000Z"
 author:
   name: Breye Foka
   picture: "/assets/blog/authors/breye.png"
 ogImage:
-  url: "/assets/blog/deeplearning/cover.jpg"
+  url: "/assets/blog/nnfromscratch/cover.jpg"
 ---
 
 
@@ -100,182 +100,48 @@ $$
 ## **🔁 Backpropagation**
 We compute gradients to update weights:
 
-Output layer:
-𝑑
-𝑍
-2
-=
-𝐴
-2
-−
-𝑌
-𝑑
-𝑊
-2
-=
-1
-𝑚
-𝑑
-𝑍
-2
-𝐴
-1
-𝑇
-𝑑
-𝑏
-2
-=
-1
-𝑚
-∑
-𝑑
-𝑍
-2
-dZ 
-2
-​
- =A 
-2
-​
- −Y
-dW 
-2
-​
- = 
-m
-1
-​
- dZ 
-2
-​
- A 
-1
-T
-​
- 
-db 
-2
-​
- = 
-m
-1
-​
- ∑dZ 
-2
-​
+*Output layer:*
+$$
+dZ^{[2]} = A^{[2]} - Y
+$$
+$$
+dW^{[2]} = \frac{1}{m} dZ^{[2]} (A^{[1]})^T
+$$
+$$
+db^{[2]} = \frac{1}{m} \sum dZ^{[2]}
+$$
  
 Hidden layer:
-𝑑
-𝑍
-1
-=
-𝑊
-2
-𝑇
-𝑑
-𝑍
-2
-⋅
-ReLU
-′
-(
-𝑍
-1
-)
-𝑑
-𝑊
-1
-=
-1
-𝑚
-𝑑
-𝑍
-1
-𝑋
-𝑇
-𝑑
-𝑏
-1
-=
-1
-𝑚
-∑
-𝑑
-𝑍
-1
-dZ 
-1
-​
- =W 
-2
-T
-​
- dZ 
-2
-​
- ⋅ReLU 
-′
- (Z 
-1
-​
- )
-dW 
-1
-​
- = 
-m
-1
-​
- dZ 
-1
-​
- X 
-T
- 
-db 
-1
-​
- = 
-m
-1
-​
- ∑dZ 
-1
-​
- 
-python
-Copy
-Edit
-def ReLU_deriv(Z): return Z > 0
-📦 Parameter Update (Gradient Descent)
-Using a learning rate 
-𝛼
-α, we update weights:
+$$
+dZ^{[1]} = (W^{[2]})^T dZ^{[2]} \circ g^{[1]'}(Z^{[1]})
+$$
 
-𝑊
-:
-=
-𝑊
-−
-𝛼
-⋅
-𝑑
-𝑊
-𝑏
-:
-=
-𝑏
-−
-𝛼
-⋅
-𝑑
-𝑏
-W:=W−α⋅dW
-b:=b−α⋅db
-🔁 Training Loop
-python
-Copy
-Edit
+$$
+dZ^{[1]} = (W^{[2]})^T dZ^{[2]} \circ \text{ReLU}'(Z^{[1]})
+$$
+$$
+dW^{[1]} = \frac{1}{m} dZ^{[1]} X^T
+$$
+$$
+db^{[1]} = \frac{1}{m} \sum dZ^{[1]}
+$$
+
+Implementing the function in python
+```python
+def ReLU_deriv(Z): return Z > 0
+```
+## **📦 Parameter Update (Gradient Descent)**
+Using a learning rate $\alpha$, we update weights:
+$$
+W := W - \alpha \cdot dW
+$$
+$$
+b := b - \alpha \cdot db
+$$
+
+## **🔁 Training Loop**
+```python
+
 for i in range(iterations):
     Z1 = W1 @ X + b1
     A1 = ReLU(Z1)
@@ -297,10 +163,9 @@ for i in range(iterations):
     b1 -= alpha * db1
     W2 -= alpha * dW2
     b2 -= alpha * db2
-🧪 Evaluation and Prediction
-python
-Copy
-Edit
+```
+## **🧪 Evaluation and Prediction**
+```python
 def predict(X):
     Z1 = W1 @ X + b1
     A1 = ReLU(Z1)
@@ -310,9 +175,10 @@ def predict(X):
 
 def accuracy(preds, Y):
     return np.mean(preds == Y) * 100
+```
 This gives us the model’s accuracy on development data.
 
-🧠 Final Thoughts
+## **🧠 Final Thoughts**
 This project demonstrates how a neural network works from the ground up:
 
 We built each component from scratch
@@ -321,7 +187,7 @@ No frameworks — just math and NumPy
 
 You now understand how forward and backpropagation drive the learning process
 
-📌 Next Steps
+## **📌 Next Steps**
 Add more layers or try different activation functions
 
 Implement regularization
@@ -329,14 +195,3 @@ Implement regularization
 Build a version with PyTorch or TensorFlow and compare
 
 Thanks for reading! Have feedback, improvements, or want to collaborate? Let’s connect!
-
-yaml
-Copy
-Edit
-
----
-
-You can copy and paste this directly into your Dev.to or Markdown-based blog platform. Do you want me to help you:
-- Add syntax highlighting for a specific platform?
-- Create a visual header or thumbnail?
-- Optimize for SEO with meta descriptions and keywords?
