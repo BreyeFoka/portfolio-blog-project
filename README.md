@@ -63,18 +63,6 @@ This site is more than a portfolio — it’s a growing digital space where I sh
 | Deployment  | [Vercel](https://vercel.com/)           |
 | Auth        | Supabase Auth or NextAuth (planned)     |
 
-## 📁 Project Structure
-
-# src/ ├── app/ 
-# Next.js App Router pages ├── components/ 
-# UI and layout components ├── lib/ 
-# Supabase, MDX, and utility functions ├── styles/ 
-# Global styles and Tailwind config ├── data/ 
-# Static content or MDX posts ├── types/
-# TypeScript types public/ # Static assets
-
-
-
 ## 🧪 Setup Locally
 
 Clone the repo and install dependencies:
