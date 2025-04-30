@@ -29,11 +29,6 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 # 🧠 Breye Foka – Modern Portfolio & Blog
 
@@ -47,21 +42,20 @@ This site is more than a portfolio — it’s a growing digital space where I sh
 - 🌓 **Dark/Light Mode** toggle (theme-aware)
 - 🧱 **Blog System** with post creation, editing, and commenting
 - 🛠️ **Project Showcases** with detailed writeups
-- 🔐 **Authentication** via Supabase (Admin dashboard only)
 - 📄 **About Page** with personal background and story
 - 📬 **Contact Form** with email integration
 - 📱 **Fully Responsive** and optimized for all devices
-- ⚡ **Fast Deployment** via Vercel
+- ⚡ **Fast Deployment** via Netlify
 
 ## 🛠 Tech Stack
 
 | Layer       | Tools & Frameworks                      |
 |-------------|-----------------------------------------|
 | Frontend    | [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/), [Framer Motion](https://www.framer.com/motion/), [Shadcn/ui](https://ui.shadcn.com/) |
-| Backend     | [Supabase](https://supabase.com/) for DB, Auth, and API |
-| Blog Engine | MDX + Supabase (Hybrid or Full DB)      |
-| Deployment  | [Vercel](https://vercel.com/)           |
-| Auth        | Supabase Auth or NextAuth (planned)     |
+
+| Blog Engine | MDX + nextjs)      |
+| Deployment  | [Netlify](https://netlify.com/)           |
+
 
 ## 🧪 Setup Locally
 
@@ -74,9 +68,6 @@ npm install
 Add your environment variables:
 
 
-# .env.local
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-key
 Then run the dev server:
 
 
@@ -104,8 +95,8 @@ If you like this project, want to collaborate, or just say hi:
 
 **📧 Email**: breyefokalagloire@gmail.com
 
-**🌍 Website**: breye.dev (coming soon)
-
+**🌍 Website**: breyefoka.netlify.app 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7f693157-6c66-4b27-8724-b67ebe6abfeb/deploy-status)](https://app.netlify.com/sites/breyefoka/deploys)
 **🐙 GitHub**: @BreyeFoka
 
 ## 📄 License
