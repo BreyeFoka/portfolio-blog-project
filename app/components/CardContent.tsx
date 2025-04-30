@@ -2,7 +2,8 @@
 import { ReactNode } from 'react';
 
 interface CardContentProps {
-  description: string;
+  description?: string;
+  className?: string;
   children: ReactNode;
 }
 
