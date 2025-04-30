@@ -36,7 +36,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-4 font-bold">
-          <Link href="/about" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">About</Link>
+          <Link href="/About" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">About</Link>
           <Link href="/mission" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Mission</Link>
           <Link href="/skillset" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Skillset</Link>
           <Link href="/projects" className="hover:bg-gray-200 dark:hover:bg-zinc-700 px-3 py-2 rounded-md">Projects</Link>
