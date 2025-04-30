@@ -105,7 +105,7 @@ export default function HomePage() {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="flex flex-wrap justify-center gap-4 mb-12"
         >
-          <Link href="/about">
+          <Link href="/About">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
               About Me <HiArrowRight className="ml-2" />
             </Button>
