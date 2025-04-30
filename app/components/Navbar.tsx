@@ -85,7 +85,7 @@ export default function Navbar() {
           <Link href="/mission" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Mission</Link>
           <Link href="/skillset" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Skillset</Link>
           <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Projects</Link>
-          <Link href="/press" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Blog</Link>
+          <Link href="/posts" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Blog</Link>
           {/* Other Pages */}
           <details className="mt-2">
             <summary className="cursor-pointer font-semibold">Other</summary>
