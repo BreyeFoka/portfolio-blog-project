@@ -93,10 +93,10 @@ $$
 -	Stochastic Gradient Descent (SGD): uses a random mini-batch
 -	Mini-Batch Gradient Descent: faster, uses subset of data
 -	Adaptive methods: e.g., Adam optimizer
-![Learning Rate Effects](/assets/blog/deeplearning/learning_rates_effects.png)
+![Learning Rate Effects](/assets/blog/deeplearning/learning_rate_effects.png)
 
 
-# **📉 Visualizing Gradient Descent**
+## **📉 Visualizing Gradient Descent**
 This graph shows how gradient descent minimizes a loss function:
 ![Gradient Descent](/assets/blog/deeplearning/gradient_descent_visual.png)
 This One shows a 3d like view:
