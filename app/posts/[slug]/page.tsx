@@ -5,6 +5,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/container";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import 'katex/dist/katex.min.css';
 
 export default async function Post(props: Params) {
   const params = await props.params;
