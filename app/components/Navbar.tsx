@@ -81,7 +81,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-zinc-900 border-t border-gray-200 dark:border-zinc-800 px-4 py-4 space-y-2">
-          <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">About</Link>
+          <Link href="/About" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">About</Link>
           <Link href="/mission" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Mission</Link>
           <Link href="/skillset" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Skillset</Link>
           <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Projects</Link>
