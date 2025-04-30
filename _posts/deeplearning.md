@@ -102,23 +102,6 @@ This graph shows how gradient descent minimizes a loss function:
 This One shows a 3d like view:
 ![Finding the Minima](/assets/blog/deeplearning/find_minima.png)
 
-<!-- ## 📉 Graph code for different learning rates:
-
-import matplotlib.pyplot as plt
-
-x = np.arange(0, 50)
-lr1 = np.exp(-0.05 * x)
-lr2 = np.exp(-0.01 * x)
-
-plt.plot(x, lr1, label="Fast Decay (η=0.05)")
-plt.plot(x, lr2, label="Slow Decay (η=0.01)")
-plt.title("Effect of Learning Rates")
-plt.xlabel("Epochs")
-plt.ylabel("Loss")
-plt.legend()
-plt.grid(True)
-plt.savefig("learning_rate_effects.png") -->
-
 ## 🧩 Generalization and Overfitting
 A network that memorizes training data but performs poorly on new data is said to overfit.
 ## 🔧 Regularization Techniques:
