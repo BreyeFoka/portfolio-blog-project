@@ -19,6 +19,7 @@ In Next.js, dynamic routing is achieved using a file-based routing system. You c
 For example:
 ```plaintext
 pages/post/[id].js
+```
 This file will match routes like /post/1, /post/2, and so on. The id in the file name becomes a route parameter accessible in your component.
 
 Static Generation with getStaticPaths
