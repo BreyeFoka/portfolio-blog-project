@@ -47,7 +47,7 @@ import {
     SiCplusplus,
     SiPlotly, 
   } from 'react-icons/si';
-const skills = [, 
+const skills = [
   {
     title: 'Graphic Design',
     purpose: 'Creating digital graphics, illustrations, and UI designs.',
@@ -177,10 +177,10 @@ export default function SkillsetPage() {
       {skills.map((skill, index) => (
         <Card key={index} className="rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
           <CardContent className="p-6">
-            <h2 className="text-xl font-bold mb-2">{skill?.title}</h2>
-            <p className="mb-4 text-gray-600">{skill?.purpose}</p>
+            <h2 className="text-xl font-bold mb-2">{skill.title}</h2>
+            <p className="mb-4 text-gray-600">{skill.purpose}</p>
             <div className="flex flex-wrap gap-4">
-              {skill?.tools.map((tool, idx) => (
+              {skill.tools.map((tool, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm bg-gray-100  dark:bg-zinc-700 px-3 py-1 rounded-full">
                   {tool.icon}
                   {tool.name}
