@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi';
 import { FiGithub, FiMail, FiLinkedin } from 'react-icons/fi';
 import { HiLocationMarker } from 'react-icons/hi';
+import { FiFile, FiDownload } from 'react-icons/fi';
 import Image from 'next/image';
 
 export default function HomePage() {
@@ -86,7 +87,7 @@ export default function HomePage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7 }}
-          className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-6"
+          className="max-w-2xl text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-4"
         >
           <HiLocationMarker className="inline-block mr-2 w-7 h-7" /> Kigali, Rwanda
         </motion.p>
@@ -95,21 +96,21 @@ export default function HomePage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-4"
         >
           <Link href="/About">
             <Button size="lg" className="dark:bg-zinc-900 bg-gray-300  text-gray-900 border-blue-600 border-2 rounded-full hover:bg-blue-600 dark:text-white">
               About Me <HiArrowRight className="ml-2" />
             </Button>
           </Link>
-          <Link href="/skillset">
-            <Button  size="lg" className="dark:bg-zinc-900 bg-gray-300  text-gray-900 border-blue-600 border-2 rounded-full hover:bg-blue-600 dark:text-white">
-              Skillset <HiArrowRight className="ml-2" />
-            </Button>
-          </Link>
           <Link href="/projects">
             <Button  size="lg" className="dark:bg-zinc-900 bg-gray-300 text-gray-900 border-blue-600 border-2 rounded-full hover:bg-blue-600 dark:text-white">
               Projects <HiArrowRight className="ml-2" />
+            </Button>
+          </Link>
+          <Link href="/Resume_Breye_Foka.pdf" target="_blank" download>
+            <Button  size="lg" className="dark:bg-zinc-900 bg-gray-300 text-gray-900 border-blue-600 border-2 rounded-full hover:bg-blue-600 dark:text-white">
+              <FiFile className='mr-2'/> Resume <FiDownload className="ml-2" />
             </Button>
           </Link>
         </motion.div>

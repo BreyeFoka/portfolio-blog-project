@@ -134,13 +134,13 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <section className="px-4 py-12 bg-gray-100 dark:bg-zinc-900">
-  <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10">My Projects</h1>
-  <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+    <section className="px-4 bg-gray-300 dark:bg-zinc-900 max-w-full">
+  <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">My Projects</h1>
+  <div className="p-6 md:p-12 grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
     {projects.map((project, index) => (
       <div
         key={index}
-        className="bg-gray-200 dark:bg-zinc-800 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
+        className="bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white shadow-gray-400 rounded-2xl rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:shadow-zinc-950 p-6 flex flex-col gap-4 w-full"
       >
         <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
           <Image

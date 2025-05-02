@@ -20,9 +20,6 @@ import {
     SiTailwindcss,
     SiDjango,
     SiFlask,
-    SiRubyonrails,
-    SiLaravel,
-    SiFastapi,
     SiFlutter,
     SiSwift,
     SiGodotengine,
@@ -46,6 +43,8 @@ import {
     SiPython,
     SiCplusplus,
     SiPlotly, 
+    SiKicad,
+    SiRaspberrypi
   } from 'react-icons/si';
 const skills = [
   {
@@ -65,13 +64,10 @@ const skills = [
       { name: 'React.js', icon: <FaReact /> },
       { name: 'Next.js', icon: <SiNextdotjs /> },
       { name: 'Vue.js', icon: <SiVuedotjs /> },
-      { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
-      { name: 'Express.js', icon: <FaNodeJs /> },
       { name: 'Django', icon: <SiDjango /> },
       { name: 'Flask', icon: <SiFlask /> },
-      { name: 'Ruby on Rails', icon: <SiRubyonrails /> },
-      { name: 'Laravel', icon: <SiLaravel /> },
-      { name: 'FastAPI', icon: <SiFastapi /> },
+      { name: 'Tailwind CSS', icon: <SiTailwindcss /> },
+      { name: 'Express.js', icon: <FaNodeJs /> },
     ]
   },
   {
@@ -135,9 +131,8 @@ const skills = [
     tools: [
       { name: 'Arduino IDE', icon: <SiArduino /> },
       { name: 'ESP-IDF', icon: <SiArduino /> },
-    //   { name: 'KiCad', icon: <FaTable /> },
-    //   { name: 'Fritzing', icon: <FaTable /> },
-    //   { name: 'Raspberry Pi', icon: <SiRaspberrypi /> },
+      { name: 'KiCad', icon: <SiKicad /> },
+      { name: 'Raspberry Pi', icon: <SiRaspberrypi /> },
     //   { name: 'MicroPython', icon: <FaPython /> },
     ]
   },
@@ -181,7 +176,7 @@ export default function SkillsetPage() {
             <p className="mb-4 text-gray-600">{skill.purpose}</p>
             <div className="flex flex-wrap gap-4">
               {skill.tools.map((tool, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm bg-gray-100  dark:bg-zinc-700 px-3 py-1 rounded-full">
+                <div key={idx} className="flex items-center gap-2 text-sm bg-gray-200  dark:bg-zinc-800 px-3 py-1 rounded-full">
                   {tool.icon}
                   {tool.name}
                 </div>
