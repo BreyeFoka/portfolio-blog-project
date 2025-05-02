@@ -8,8 +8,23 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Breye Foka | Portfolio",
-  description: "Portfolio and blog site for Breye Foka ",
+  title: "Breye Foka L. - Portfolio",
+  description: "Breye Foka L. – Computer Science undergraduate & Scientist",
+  keywords: ["Breye Foka L", "Breye Foka", "Software Developer", "AI", "Full Stack Developer", "Portfolio"],
+  authors: [{ name: "Breye Foka L." }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Breye Foka L. - Portfolio",
+    description: "Discover the work and projects of Breye Foka L.",
+    url: "https://breyefoka.netlify.app",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  other: {
+    "google-site-verification": "bYpXiBG4H2P9IWxI9Bb3zSNnCirPbqsHNJ1nkXNPaQs",
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -10,30 +10,9 @@ import { FiFile, FiDownload } from 'react-icons/fi';
 import Image from 'next/image';
 
 
-export const metadata = {
-  title: "Breye Foka L.",
-  description: "Breye Foka L. – Computer Science undergraduate & Scientist",
-  keywords: ["Breye Foka L", "Breye Foka", "Software Developer", "AI", "Full Stack Developer", "Portfolio"],
-  authors: [{ name: "Breye Foka L." }],
-  robots: "index, follow",
-  openGraph: {
-    title: "Breye Foka L. - Portfolio",
-    description: "Discover the work and projects of Breye Foka L.",
-    url: "https://breyefoka.netlify.app",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-  other: {
-    "google-site-verification": "bYpXiBG4H2P9IWxI9Bb3zSNnCirPbqsHNJ1nkXNPaQs",
-  }
-};
-
 export default function HomePage() {
   return (
     <>
-
       {/* Outer wrapper to control full height and footer placement */}
       <div className="flex flex-col  bg-gray-300 dark:bg-zinc-900">
         <main className="flex-grow flex flex-col items-center justify-start text-center px-4 pt-8">
