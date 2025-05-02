@@ -10,7 +10,7 @@ export default function About() {
         <meta name="description" content="About Me page for Breye Foka L."/>
       </Head>
 
-      <main className="container mx-auto px-6 py-16 space-y-24 bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
+      <main className="container mx-auto px-6  space-y-24 bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
         {/* About Section */}
         <motion.section
           id="about"
