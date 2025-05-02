@@ -4,8 +4,8 @@ excerpt: "Learn how to implement dynamic routing in Next.js using static generat
 coverImage: "/assets/blog/dynamic-routing/cover.jpg"
 date: "2025-04-24T20:19:37.000Z"
 author:
-  name: JJ Kasper
-  picture: "/assets/blog/authors/jj.jpeg"
+  name: Breye Foka
+  picture: "/assets/blog/authors/breye.png"
 ogImage:
   url: "/assets/blog/dynamic-routing/cover.jpg"
 ---
@@ -27,7 +27,7 @@ To pre-render pages with dynamic routes at build time, you can use the getStatic
 
 Here’s an example:
 
-JavaScript
+```JavaScript
 export async function getStaticPaths() {
   return {
     paths: [
@@ -37,6 +37,7 @@ export async function getStaticPaths() {
     fallback: false, // Can also be 'true' or 'blocking'
   };
 }
+```
 paths: An array of objects specifying the routes to pre-render.
 fallback: Determines behavior for routes not specified in paths.
 Fetching Data with getStaticProps
@@ -44,7 +45,7 @@ To provide data to the dynamically generated pages, use the getStaticProps funct
 
 Example:
 
-JavaScript
+```JavaScript
 export async function getStaticProps({ params }) {
   const post = await fetchPostData(params.id);
   return {
@@ -53,6 +54,7 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+```
 In this example, params.id refers to the dynamic id defined in the route.
 
 Fallback Behavior
@@ -71,7 +73,7 @@ Suppose you have a blog application where each post has a unique ID. Here’s ho
 Create a file: pages/blog/[id].js.
 Use getStaticPaths to define which posts are pre-rendered.
 Use getStaticProps to fetch the content for each post.
-JavaScript
+```JavaScript
 export async function getStaticPaths() {
   const posts = await fetchAllPosts();
   const paths = posts.map((post) => ({
@@ -89,6 +91,7 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+```
 This setup ensures that your blog has high-performance pages with excellent SEO while maintaining flexibility for dynamic content.
 
 Dynamic routing and static generation in Next.js provide a powerful combination for building modern web applications. By leveraging these features, you can create scalable, SEO-friendly, and high-performance websites tailored to your needs.
