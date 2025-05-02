@@ -14,7 +14,7 @@ const projects = [
   },
   {
     title: 'IoT Weather Monitor',
-    image: '/images/weather-monitor.png',
+    image: '/images/placeholder.png',
     description: 'An IoT-based system for real-time weather monitoring using sensors and cloud dashboard.',
     tech: ['Arduino', 'NodeMCU', 'Firebase', 'React'],
     github: 'https://github.com/yourusername/iot-weather-monitor',
@@ -52,14 +52,14 @@ const projects = [
     title: 'Daddy Laugh',
     image: '/images/daddylaugh.png',
     description: 'A simple web application built with React that fetches random dad jokes from an API and displays them in a glassmorphism-styled card.',
-    tech: ['React', 'Tailwind CSS','Axios', 'API', 'Node.js'],
+    tech: ['React', 'Tailwind CSS', 'Axios', 'API', 'Node.js'],
     github: 'hhttps://github.com/BreyeFoka/daddylaugh.git',
     live: 'https://daddylaugh.netlify.app/',
     blogSlug: 'daddylaugh',
   },
   {
-    title: 'Daddy Laugh',
-    image: '/images/shop.png',
+    title: 'Shop Management System',
+    image: '/images/placeholder.png',
     description: 'Shop-management-System built using php and mysal and runs on Xampp',
     tech: ['PHP', 'MySQL', 'XAMPP'],
     github: 'hhttps://github.com/BreyeFoka/shop.git',
@@ -68,7 +68,7 @@ const projects = [
   },
   {
     title: 'Morse Code Translator',
-    image: '/images/morse-code.png',
+    image: '/images/placeholder.png',
     descrption: 'A simple app that converts the normal message to morse code and vice versa, entirely written in python with a tk user interface..',
     tech: ['Python', 'Tkinter'],
     github: 'https://github.com/BreyeFoka/text_to_morse_code.git',
@@ -77,7 +77,7 @@ const projects = [
   },
   {
     title: 'Arduino Self Driving Robot',
-    image: '/images/self-driving-robot.png',
+    image: '/images/placeholder.png',
     description: 'An Arduino-based self-driving robot that uses ultrasonic sensors and infrared sensors for obstacle detection and avoidance.',
     tech: ['Arduino', 'Ultrasonic Sensor', 'Infrared Sensor'],
     github: 'https://github.com/BreyeFoka/Arduino_Follow_Me_Robot.git',
@@ -86,7 +86,7 @@ const projects = [
   },
   {
     title: 'Expense Tracker',
-    image: '/images/expense-tracker.png',
+    image: '/images/placeholder.png',
     description: 'A mobile  application(flutter & dart) that helps users track their expenses and manage their budget effectively.',
     tech: ['Flutter', 'Dart'],
     github: 'https://github.com/BreyeFoka/expense_tracker.git',
@@ -95,8 +95,7 @@ const projects = [
   },
   {
     title: 'Python Air Painting',
-    image: '/images/air-painting.png',
-    description: 'A Python project that uses OpenCV and MediaPipe to create an air painting application.',
+    image: '/images/placeholder.png', description: 'A Python project that uses OpenCV and MediaPipe to create an air painting application.',
     tech: ['Python', 'OpenCV', 'MediaPipe', 'numpy'],
     github: 'https://github.com/BreyeFoka/hand_detection/tree/master.git',
     live: '',
@@ -104,26 +103,26 @@ const projects = [
   },
   {
     title: 'Sticker Smash',
-    image: '/images/sticker-smash.png',
-    description: 'A mobile app built with Expo and react native that allows users to create, edit and share stickers and photos.',
+    image: '/images/placeholder.png',
+     description: 'A mobile app built with Expo and react native that allows users to create, edit and share stickers and photos.',
     tech: ['React Native', 'Expo'],
     github: 'https://github.com/BreyeFoka/StickerSmash.git',
-    live:'',
+    live: '',
     blogSlug: 'sticker-smash',
   },
   {
     title: 'Enigma Encryption',
-    image: '/images/enigma.png',
+    image: '/images/placeholder.png', 
     description: 'A Python project that implements the Enigma machine encryption algorithm.',
     tech: ['Python', 'tkinter'],
-    github:'https://github.com/BreyeFoka/enigma-machine',
+    github: 'https://github.com/BreyeFoka/enigma-machine',
     live: '',
     blogSlug: 'enigma-machine',
   },
   {
     title: 'Tic-Tac-Toe Swift',
-    image: '/images/tictactoe.png',
-    description:'Simple tictac toe game using swift ui',
+    image: '/images/placeholder.png', 
+    description: 'Simple tictac toe game using swift ui',
     tech: ['Swift UI'],
     github: 'https://github.com/BreyeFoka/Tic-Tac-Toe_Swift.git',
     live: '',
@@ -135,73 +134,73 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <section className="px-4 bg-gray-300 dark:bg-zinc-900 max-w-full">
-  <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">My Projects</h1>
-  <div className="p-6 md:p-12 grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-    {projects.map((project, index) => (
-      <div
-        key={index}
-        className="bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white shadow-gray-400 rounded-2xl rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:shadow-zinc-950 p-6 flex flex-col gap-4 w-full"
-      >
-        <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="p-5 flex flex-col justify-between flex-1">
-          <div>
-            <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">{project.title}</h2>
-            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-              {project.description}{' '}
-              <Link
-                href={`/posts/${project.blogSlug}`}
-                className="text-blue-500 hover:underline"
-              >
-                Read more →
-              </Link>
-            </p>
-            <div className="mb-4">
-              <span className="text-xs text-gray-500 uppercase tracking-wide">Tech Stack</span>
-              <ul className="flex flex-wrap gap-2 mt-2">
-                {project.tech.map((tech, i) => (
-                  <li
-                    key={i}
-                    className="bg-white dark:bg-zinc-700 text-gray-800 dark:text-white px-2 py-1 text-xs rounded-full shadow-sm"
+      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">My Projects</h1>
+      <div className="p-6 md:p-12 grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white shadow-gray-400 rounded-2xl rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:shadow-zinc-950 p-6 flex flex-col gap-4 w-full"
+          >
+            <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-5 flex flex-col justify-between flex-1">
+              <div>
+                <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">{project.title}</h2>
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
+                  {project.description}{' '}
+                  <Link
+                    href={`/posts/${project.blogSlug}`}
+                    className="text-blue-500 hover:underline"
                   >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+                    Read more →
+                  </Link>
+                </p>
+                <div className="mb-4">
+                  <span className="text-xs text-gray-500 uppercase tracking-wide">Tech Stack</span>
+                  <ul className="flex flex-wrap gap-2 mt-2">
+                    {project.tech.map((tech, i) => (
+                      <li
+                        key={i}
+                        className="bg-white dark:bg-zinc-700 text-gray-800 dark:text-white px-2 py-1 text-xs rounded-full shadow-sm"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="flex gap-3 mt-4">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-gray-900 text-white text-sm px-4 py-2 rounded-full hover:bg-gray-700"
+                >
+                  <Github size={16} />
+                  GitHub
+                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-500"
+                  >
+                    <ExternalLink size={16} />
+                    Live Demo
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-          <div className="flex gap-3 mt-4">
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gray-900 text-white text-sm px-4 py-2 rounded-full hover:bg-gray-700"
-            >
-              <Github size={16} />
-              GitHub
-            </a>
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-500"
-              >
-                <ExternalLink size={16} />
-                Live Demo
-              </a>
-            )}
-          </div>
-        </div>
+        ))}
       </div>
-    ))}
-  </div>
-</section>
+    </section>
   );
 }
