@@ -12,7 +12,7 @@ export default function Footer() {
         return null; // Don't render the footer on the home page
     }else {
         return (
-    <footer className="bottom-0 left-0 right-0 bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white transition-colors">
+    <footer className="bottom-0 left-0 right-0 bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 flex flex-col items-center">
         {/* Contributions */}
         <div className="w-full hidden  sm:flex flex-col  justify-center items-center mb-6">
@@ -44,11 +44,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-200 dark:border-gray-700 w-full" />
+        <hr className="my-6 border-gray-900 dark:border-gray-300 w-full" />
 
         {/* Footer Bottom */}
         <div className="w-full flex flex-col sm:flex-row sm:justify-between items-center">
-          <span className="text-sm text-gray-500 dark:text-gray-400 text-center sm:text-left">
+          <span className="text-sm text-gray-700 dark:text-gray-400 text-center sm:text-left">
             © {new Date().getFullYear()} Breye Foka. All Rights Reserved.
           </span>
           <div className="hidden sm:flex space-x-4">

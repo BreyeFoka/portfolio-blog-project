@@ -33,7 +33,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="p-2 bg-gray-800 text-white rounded-md dark:bg-white dark:text-gray-800">
+    <button onClick={toggleTheme} className="p-2 bg-zinc-900 text-white rounded-md dark:bg-gray-300 dark:text-gray-900">
       {isDarkMode ? <Sun width={20} height={20}/> : <Moon width={20} height={20}/>}
     </button>
   );

@@ -11,7 +11,7 @@ export default function Mission() {
         <meta name="description" content="Mission page for Breye Foka L., outlining goals, values, and vision" />
       </Head>
 
-      <main className="container mx-auto px-6 py-10 space-y-16">
+      <main className="container mx-auto px-6 py-10 space-y-16  bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
         {/* Mission Statement */}
         <section id="mission">
           <h1 className="text-4xl font-bold">🎯 My Mission</h1>
@@ -62,13 +62,7 @@ export default function Mission() {
           </p>
         </section>
 
-        {/* Connect Section */}
-        <section id="connect">
-          <h2 className="text-3xl font-bold">🤝 Let’Us Collaborate</h2>
-          <p className="mt-4 text-lg">
-            Whether it’s cybersecurity, data science, or robotics, I’m always up for meaningful projects. Want to partner? Have a challenge? Let’s talk.
-          </p>
-        </section>
+
       </main>
     </>
   );
