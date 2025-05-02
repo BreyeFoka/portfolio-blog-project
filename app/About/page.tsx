@@ -1,6 +1,8 @@
 'use client'
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export default function About() {
   return (
@@ -10,7 +12,8 @@ export default function About() {
         <meta name="description" content="About Me page for Breye Foka L."/>
       </Head>
 
-      <main className="container mx-auto px-6  space-y-24 bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
+      <main className="container mx-auto px-6 space-y-24 bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors">
+
         {/* About Section */}
         <motion.section
           id="about"
@@ -19,16 +22,16 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
-          <h1 className="text-5xl font-extrabold ">👨‍💻 About Me</h1>
+          <h1 className="text-5xl font-extrabold">👨‍💻 About Me</h1>
           <div className="space-y-4 text-xl leading-relaxed">
             <p>
-              Hey, I’m <span className="font-semibold text-primary">Breye Foka L.</span> — a tech-obsessed Computer Science undergrad driven by curiosity, creativity, and a mission to make a real impact.
+              I’m <span className="font-semibold text-primary">Breye Foka L.</span>, a Computer Science undergraduate who spends most of his time figuring out how things work — then breaking and fixing them.
             </p>
             <p>
-              I’m passionate about science, electronics, programming, and anything that makes systems tick. Grew up tearing stuff apart — now I build things that help people. Whether it’s writing Python for a data pipeline or poking around a network for ethical hacking practice, I’m all in.
+              I like electronics, coding, and exploring systems. I like writing scripts, building tools, or messing with networks, I enjoy solving real problems.
             </p>
             <p>
-              Known as the guy who’ll debug your stack *and* crack a joke mid-crisis. Driven by my parents’ sacrifices, love for community, and a mission to hit the top 1% of my field—and pull others up with me.
+              People say I can crack a bug and a joke in the same breath. I take tech seriously, but not myself. My family keeps me grounded, and I’m aiming to get really good at what I do — and help others do the same.
             </p>
           </div>
         </motion.section>
@@ -42,15 +45,15 @@ export default function About() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <h2 className="text-4xl font-bold">📚 Education & Self-Learning</h2>
+          <h2 className="text-4xl font-bold">📚 Education</h2>
           <ul className="list-disc list-inside text-lg space-y-2">
-            <li>🎓 <strong>Bachelor’s in Computer Science</strong> (In Progress)</li>
-            <li>📜 Certified in electronics, networking, pentesting, IoT, web dev, data science, cybersecurity & more (online programs)</li>
-            <li>🧠 Self-taught in electronics and robotics</li>
-            <li>💥 Math-Physics-Chemistry nerd from high school — still shapes how I solve stuff today</li>
+            <li>🎓 Studying Computer Science (Bachelor’s 2nd Year)</li>
+            <li>📜 Took online courses in electronics, networking, pentesting, IoT, web dev, data science, and cybersecurity</li>
+            <li>🧠 Taught myself robotics and electronics by tinkering</li>
+            <li>💥 Was deep into math, physics, and chemistry in high school — still use that mindset</li>
           </ul>
           <p className="italic text-lg">
-            Inspired by legends like Linus Torvalds, Tony Stark, Cisco Ramon, and Peter Parker — I mix technical grit with imagination and heart.
+            I grew up inspired by people who build cool stuff — real and fictional.
           </p>
         </motion.section>
 
@@ -63,13 +66,14 @@ export default function About() {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <h2 className="text-4xl font-bold">🛠 Tech Focus</h2>
-          <p className="text-xl">🔍 Currently Obsessed With:</p>
+          <h2 className="text-4xl font-bold">🛠 What I’m Into</h2>
+          <p className="text-xl">Things I spend most of my time learning or doing:</p>
           <ul className="list-disc list-inside text-lg space-y-1">
-            <li>Ethical Hacking & Cybersecurity</li>
-            <li>Machine Learning & Data Science</li>
-            <li>Competitive Programming & DSA</li>
-            <li>Robotics & Automation</li>
+            <li>Ethical hacking</li>
+            <li>Machine learning</li>
+            <li>Data science</li>
+            <li>Competitive programming</li>
+            <li>Robotics</li>
           </ul>
         </motion.section>
 
@@ -82,23 +86,22 @@ export default function About() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <h2 className="text-4xl font-bold">🧪 Projects & Experience</h2>
+          <h2 className="text-4xl font-bold">🧪 Work Experiences</h2>
           <div className="space-y-4 text-lg">
-            <div>
-              <h3 className="text-xl font-semibold">💡 Bachelier</h3>
-              <p>A tool I built to help high school students check exam results online — simple, clean, real-world useful.</p>
-            </div>
             <div>
               <h3 className="text-xl font-semibold">🔧 Freelance Work</h3>
               <ul className="list-disc list-inside">
-                <li>Full-stack web development</li>
-                <li>Graphic design</li>
-                <li>Data analytics research</li>
+                <li>Built websites</li>
+                <li>Did some graphic design</li>
+                <li>Helped with data projects</li>
               </ul>
+              <Button className="mt-4 bg-gray-300 dark:bg-zinc-900 hadow-lg hover shadow-xl transition duration-300 dark:shadow-zinc-950 text-gray-900 dark:text-white">
+              <Link href="/projects" className="text-blue-500 hover:underline">Check out my projects</Link>
+              </Button>
             </div>
             <div>
-              <h3 className="text-xl font-semibold">🤝 Giving Back</h3>
-              <p>Answering coding questions, debugging for friends, and mentoring others — because that’s how I grew too.</p>
+              <h3 className="text-xl font-semibold">🤝 Helping Others</h3>
+              <p>I’ve spent time debugging, explaining code, and mentoring — because that’s how I learned too.</p>
             </div>
           </div>
         </motion.section>
@@ -112,12 +115,12 @@ export default function About() {
           viewport={{ once: true }}
           className="space-y-6"
         >
-          <h2 className="text-4xl font-bold">🧠 Mindset & Personality</h2>
+          <h2 className="text-4xl font-bold">🧠 How I Work</h2>
           <ul className="list-disc list-inside text-lg space-y-2">
-            <li>🧩 Problem-solving: Think deep, search smart, learn why it works</li>
-            <li>👥 Work style: Love solo, thrive in tight-knit teams</li>
-            <li>🎧 Recharge: Music. Walks. Sports. Memes. Weird books & naps</li>
-            <li>📍 Planning: Just enough to not crash — figure out the rest mid-flight</li>
+            <li>🧩 I like solving problems by digging deep and understanding the “why”</li>
+            <li>👥 I work well alone, but I enjoy building with a small team</li>
+            <li>🎧 I recharge with music, sports, memes, books, and naps</li>
+            <li>📍 I don’t over-plan — I adjust as I go</li>
           </ul>
         </motion.section>
 
@@ -130,15 +133,15 @@ export default function About() {
           viewport={{ once: true }}
           className="space-y-4 text-xl leading-relaxed"
         >
-          <h2 className="text-4xl font-bold">🌍 Vision</h2>
+          <h2 className="text-4xl font-bold">🌍 What’s Next</h2>
           <p>
-            In 3–5 years, I see myself working in cybersecurity or data science, doing meaningful work. I want to build my own tech company, travel while working, and — why not — earn my pilot license.
+            In a few years, I hope to be working in cybersecurity or data science, maybe running my own tech company. I’d love to travel, stay hands-on with tech, and earn a pilot license someday.
           </p>
           <p>
-            Long-term? I want to create tech that solves real problems in my community, and maybe gain global recognition in science or engineering while I’m at it.
+            My bigger goal is to build tools that actually help people where I live — and maybe beyond.
           </p>
         </motion.section>
- 
+
       </main>
     </>
   );
