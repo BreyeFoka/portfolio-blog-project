@@ -1,5 +1,5 @@
 "use client";
-import Head from 'next/head';
+
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -9,29 +9,30 @@ import { HiLocationMarker } from 'react-icons/hi';
 import { FiFile, FiDownload } from 'react-icons/fi';
 import Image from 'next/image';
 
+
+export const metadata = {
+  title: "Breye Foka L.",
+  description: "Breye Foka L. – Computer Science undergraduate & Scientist",
+  keywords: ["Breye Foka L", "Breye Foka", "Software Developer", "AI", "Full Stack Developer", "Portfolio"],
+  authors: [{ name: "Breye Foka L." }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Breye Foka L. - Portfolio",
+    description: "Discover the work and projects of Breye Foka L.",
+    url: "https://breyefoka.netlify.app",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  other: {
+    "google-site-verification": "bYpXiBG4H2P9IWxI9Bb3zSNnCirPbqsHNJ1nkXNPaQs",
+  }
+};
+
 export default function HomePage() {
   return (
     <>
-      <Head>
-        <title>Breye Foka L.</title>
-        <meta
-          name="description"
-          content="Breye Foka L. – Computer Science undergraduate & Scientist"
-        />
-        <meta name="keywords" content="Breye Foka L, Breye Foka, Software Developer, AI, Full Stack Developer, Portfolio" />
-        <meta name="author" content="Breye Foka L." />
-        <meta name="robots" content="index, follow" />
-
-        {/* Open Graph (Facebook, LinkedIn) */}
-        <meta property="og:title" content="Breye Foka L. - Portfolio" />
-        <meta property="og:description" content="Discover the work and projects of Breye Foka L." />
-        <meta property="og:url" content="https://breyefoka.netlify.app" />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="google-site-verification" content="bYpXiBG4H2P9IWxI9Bb3zSNnCirPbqsHNJ1nkXNPaQs" />
-      </Head>
 
       {/* Outer wrapper to control full height and footer placement */}
       <div className="flex flex-col  bg-gray-300 dark:bg-zinc-900">
