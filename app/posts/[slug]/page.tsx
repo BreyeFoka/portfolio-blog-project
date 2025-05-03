@@ -9,7 +9,7 @@ import 'katex/dist/katex.min.css';
 
 export default async function Post(props: Params) {
   const params = await props.params;
-  const post = getPostBySlug(params.slug);
+  const post = await getPostBySlug(params.slug);
 
   if (!post) {
     return notFound();
@@ -60,10 +60,8 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     },
   };
 }
-
 export async function generateStaticParams() {
-  const posts = getAllPosts();
-
+  const posts = await getAllPosts(); // assuming this is async
   return posts.map((post) => ({
     slug: post.slug,
   }));
