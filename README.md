@@ -47,12 +47,6 @@ npm run dev
 
 **Projects**: Showcase your work with tech stack, links, and descriptions
 
-**Dashboard**: Admin-only for managing posts and comments
-
-**Comments**: Real-time comment system powered by Supabase
-
-**Analytics**: Vercel Analytics or Plausible (optional)
-
 **SEO Friendly**: Custom meta tags and open graph support
 
 ## 📚 Inspiration
