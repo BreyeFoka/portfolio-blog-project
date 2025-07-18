@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://breyefoka.netlify.app
+
+# Sitemaps
+Sitemap: https://breyefoka.netlify.app/sitemap.xml

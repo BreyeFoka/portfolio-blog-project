@@ -1,8 +1,25 @@
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Github, ExternalLink } from 'lucide-react'; // Optional icons
+import { motion, AnimatePresence } from 'framer-motion';
+import { Github, ExternalLink, Code, User, Layers, BookOpen, Search } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-const projects = [
+// Define interface for project
+interface Project {
+  title: string;
+  image: string;
+  description: string;
+  tech: string[];
+  github: string;
+  live?: string;
+  blogSlug?: string;
+  category: string;
+}
+
+const projects: Project[] = [
   {
     title: 'Bachelier',
     image: '/images/bachelier.png',
@@ -11,6 +28,7 @@ const projects = [
     github: 'https://github.com/BreyeFoka/bachelier.git',
     live: 'https://bachelier.live',
     blogSlug: 'bachelier-project',
+    category: 'fullstack'
   },
   {
     title: 'IoT Weather Monitor',
@@ -20,6 +38,7 @@ const projects = [
     github: 'https://github.com/yourusername/iot-weather-monitor',
     live: '',
     blogSlug: 'iot-weather-monitor',
+    category: 'iot'
   },
   {
     title: 'Smart Helmet',
@@ -29,6 +48,7 @@ const projects = [
     github: 'https://github.com/BreyeFoka/SmartHelmet.git',
     live: '',
     blogSlug: 'smart-helmet',
+    category: 'iot'
   },
   {
     title: 'Anime Quest',
@@ -38,169 +58,271 @@ const projects = [
     github: 'http://github.com/BreyeFoka/Anime-Vault.git',
     live: 'https://anime-quest-ts.netlify.app',
     blogSlug: 'anime-quest',
+    category: 'frontend'
   },
   {
     title: 'Sarcastic Advisor',
     image: '/images/sarcastic-advisor.png',
     description: 'An app that gives sarcastic advices each time you click on the button',
     tech: ['React', 'Tailwind CSS', 'Typescript', 'API', 'Node.js'],
-    github: 'hhttps://github.com/BreyeFoka/Advisor-react.git',
+    github: 'https://github.com/BreyeFoka/Advisor-react.git',
     live: 'https://sarcasticadvisor.netlify.app/',
     blogSlug: 'sarcastic-advisor',
+    category: 'frontend'
   },
   {
     title: 'Daddy Laugh',
     image: '/images/daddylaugh.png',
-    description: 'A simple web application built with React that fetches random dad jokes from an API and displays them in a glassmorphism-styled card.',
-    tech: ['React', 'Tailwind CSS', 'Axios', 'API', 'Node.js'],
-    github: 'hhttps://github.com/BreyeFoka/daddylaugh.git',
-    live: 'https://daddylaugh.netlify.app/',
-    blogSlug: 'daddylaugh',
-  },
-  {
-    title: 'Shop Management System',
-    image: '/images/placeholder.png',
-    description: 'Shop-management-System built using php and mysal and runs on Xampp',
-    tech: ['PHP', 'MySQL', 'XAMPP'],
-    github: 'hhttps://github.com/BreyeFoka/shop.git',
-    live: '',
-    blogSlug: 'shop-management-system',
-  },
-  {
-    title: 'Morse Code Translator',
-    image: '/images/placeholder.png',
-    descrption: 'A simple app that converts the normal message to morse code and vice versa, entirely written in python with a tk user interface..',
-    tech: ['Python', 'Tkinter'],
-    github: 'https://github.com/BreyeFoka/text_to_morse_code.git',
-    live: '',
-    blogSlug: 'morse-code-translator'
-  },
-  {
-    title: 'Arduino Self Driving Robot',
-    image: '/images/placeholder.png',
-    description: 'An Arduino-based self-driving robot that uses ultrasonic sensors and infrared sensors for obstacle detection and avoidance.',
-    tech: ['Arduino', 'Ultrasonic Sensor', 'Infrared Sensor'],
-    github: 'https://github.com/BreyeFoka/Arduino_Follow_Me_Robot.git',
-    live: '',
-    blogSlug: 'self-driving-robot',
-  },
-  {
-    title: 'Expense Tracker',
-    image: '/images/placeholder.png',
-    description: 'A mobile  application(flutter & dart) that helps users track their expenses and manage their budget effectively.',
-    tech: ['Flutter', 'Dart'],
-    github: 'https://github.com/BreyeFoka/expense_tracker.git',
-    live: '',
-    blogSlug: 'expense-tracker',
-  },
-  {
-    title: 'Python Air Painting',
-    image: '/images/placeholder.png', description: 'A Python project that uses OpenCV and MediaPipe to create an air painting application.',
-    tech: ['Python', 'OpenCV', 'MediaPipe', 'numpy'],
-    github: 'https://github.com/BreyeFoka/hand_detection/tree/master.git',
-    live: '',
-    blogSlug: 'air-painting',
-  },
-  {
-    title: 'Sticker Smash',
-    image: '/images/placeholder.png',
-     description: 'A mobile app built with Expo and react native that allows users to create, edit and share stickers and photos.',
-    tech: ['React Native', 'Expo'],
-    github: 'https://github.com/BreyeFoka/StickerSmash.git',
-    live: '',
-    blogSlug: 'sticker-smash',
-  },
-  {
-    title: 'Enigma Encryption',
-    image: '/images/placeholder.png', 
-    description: 'A Python project that implements the Enigma machine encryption algorithm.',
-    tech: ['Python', 'tkinter'],
-    github: 'https://github.com/BreyeFoka/enigma-machine',
-    live: '',
-    blogSlug: 'enigma-machine',
-  },
-  {
-    title: 'Tic-Tac-Toe Swift',
-    image: '/images/placeholder.png', 
-    description: 'Simple tictac toe game using swift ui',
-    tech: ['Swift UI'],
-    github: 'https://github.com/BreyeFoka/Tic-Tac-Toe_Swift.git',
-    live: '',
-    blogslug: 'SwiftUI Game',
-
+    description: 'A simple web app that displays random dad jokes fetched from an API.',
+    tech: ['JavaScript', 'HTML', 'CSS', 'API'],
+    github: 'https://github.com/BreyeFoka/Dad-jokes.git',
+    live: 'https://daddylaugh.netlify.app',
+    blogSlug: 'dad-jokes',
+    category: 'frontend'
   }
 ];
 
+// Animation variants
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
 export default function ProjectsPage() {
+  const [filter, setFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  // Filter projects based on category and search query
+  const filteredProjects = projects.filter(project => {
+    const matchesCategory = filter === 'all' || project.category === filter;
+    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                         project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         project.tech.some(tech => tech.toLowerCase().includes(searchQuery.toLowerCase()));
+    
+    return matchesCategory && matchesSearch;
+  });
+
   return (
-    <section className="px-4 bg-gray-300 dark:bg-zinc-900 max-w-full">
-      <h1 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">My Projects</h1>
-      <div className="p-6 md:p-12 grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-gray-300 dark:bg-zinc-900 text-gray-900 dark:text-white shadow-gray-400 rounded-2xl rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:shadow-zinc-950 p-6 flex flex-col gap-4 w-full"
-          >
-            <div className="relative w-full h-48 rounded-t-xl overflow-hidden">
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover"
-              />
+    <div className="max-w-7xl mx-auto">
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="mb-16 text-center"
+      >
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 bg-clip-text text-transparent"
+        >
+          My Projects
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8"
+        >
+          A showcase of my work across various technologies and domains. Each project represents my passion for coding and problem-solving.
+        </motion.p>
+        
+        {/* Search and Filter Controls */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-4 mb-12">
+          <div className="relative w-full max-w-md">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-500" />
             </div>
-            <div className="p-5 flex flex-col justify-between flex-1">
-              <div>
-                <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-2">{project.title}</h2>
-                <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
-                  {project.description}{' '}
-                  <Link
-                    href={`/posts/${project.blogSlug}`}
-                    className="text-blue-500 hover:underline"
-                  >
-                    Read more →
-                  </Link>
-                </p>
-                <div className="mb-4">
-                  <span className="text-xs text-gray-500 uppercase tracking-wide">Tech Stack</span>
-                  <ul className="flex flex-wrap gap-2 mt-2">
-                    {project.tech.map((tech, i) => (
-                      <li
-                        key={i}
-                        className="bg-white dark:bg-zinc-700 text-gray-800 dark:text-white px-2 py-1 text-xs rounded-full shadow-sm"
-                      >
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="flex gap-3 mt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gray-900 text-white text-sm px-4 py-2 rounded-full hover:bg-gray-700"
-                >
-                  <Github size={16} />
-                  GitHub
-                </a>
-                {project.live && (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-blue-600 text-white text-sm px-4 py-2 rounded-full hover:bg-blue-500"
-                  >
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </a>
-                )}
-              </div>
-            </div>
+            <input
+              type="text"
+              className="w-full pl-10 pr-4 py-2 rounded-full bg-white/40 dark:bg-zinc-800/40 backdrop-blur-sm border border-white/10 dark:border-zinc-700/10 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              placeholder="Search projects..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
-        ))}
+          
+          <div className="flex flex-wrap justify-center gap-2">
+            <FilterButton 
+              active={filter === 'all'} 
+              onClick={() => setFilter('all')}
+              icon={<Layers className="w-4 h-4 mr-2" />}
+            >
+              All
+            </FilterButton>
+            <FilterButton 
+              active={filter === 'frontend'} 
+              onClick={() => setFilter('frontend')}
+              icon={<Code className="w-4 h-4 mr-2" />}
+            >
+              Frontend
+            </FilterButton>
+            <FilterButton 
+              active={filter === 'fullstack'} 
+              onClick={() => setFilter('fullstack')}
+              icon={<BookOpen className="w-4 h-4 mr-2" />}
+            >
+              Full Stack
+            </FilterButton>
+            <FilterButton 
+              active={filter === 'iot'} 
+              onClick={() => setFilter('iot')}
+              icon={<User className="w-4 h-4 mr-2" />}
+            >
+              IoT
+            </FilterButton>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Projects Grid */}
+      <AnimatePresence mode="wait">
+        {filteredProjects.length > 0 ? (
+          <motion.div
+            key="projects-grid"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </motion.div>
+        ) : (
+          <motion.div
+            key="no-results"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="text-center py-20"
+          >
+            <h3 className="text-2xl font-medium mb-4">No matching projects found</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">Try changing your search terms or filters</p>
+            <Button onClick={() => {setFilter('all'); setSearchQuery('');}}>
+              Reset Filters
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+// Project Card Component
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <motion.div
+      variants={fadeIn}
+      className="group relative overflow-hidden rounded-xl bg-white/30 dark:bg-zinc-800/30 backdrop-blur-md border border-white/10 dark:border-zinc-700/10 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col"
+    >
+      {/* Project Image */}
+      <div className="aspect-video overflow-hidden relative">
+        <Image
+          src={project.image}
+          alt={project.title}
+          width={600}
+          height={400}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        
+        {/* Technology pills overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-2 bg-gradient-to-t from-black/70 to-transparent">
+          <div className="flex flex-wrap gap-1.5">
+            {project.tech.slice(0, 3).map((tech, i) => (
+              <span 
+                key={i} 
+                className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 backdrop-blur-sm text-white"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.tech.length > 3 && (
+              <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-white/20 backdrop-blur-sm text-white">
+                +{project.tech.length - 3}
+              </span>
+            )}
+          </div>
+        </div>
       </div>
-    </section>
+      
+      {/* Project Info */}
+      <div className="p-5 flex-grow flex flex-col">
+        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+        <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">{project.description}</p>
+        
+        {/* Links */}
+        <div className="flex flex-wrap gap-3 mt-2">
+          {project.github && (
+            <a 
+              href={project.github} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-sm font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <Github className="w-4 h-4 mr-1" /> Code
+            </a>
+          )}
+          {project.live && (
+            <a 
+              href={project.live} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center text-sm font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <ExternalLink className="w-4 h-4 mr-1" /> Live Demo
+            </a>
+          )}
+          {project.blogSlug && (
+            <Link 
+              href={`/posts/${project.blogSlug}`}
+              className="flex items-center text-sm font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+            >
+              <BookOpen className="w-4 h-4 mr-1" /> Read More
+            </Link>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+// FilterButton props interface
+interface FilterButtonProps {
+  children: React.ReactNode;
+  active: boolean;
+  onClick: () => void;
+  icon: React.ReactNode;
+}
+
+// Filter Button Component
+function FilterButton({ children, active, onClick, icon }: FilterButtonProps) {
+  return (
+    <button
+      className={`flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+        active
+          ? "bg-blue-600 text-white"
+          : "bg-white/20 dark:bg-zinc-800/20 backdrop-blur-sm border border-white/10 dark:border-zinc-700/10 text-gray-900 dark:text-white hover:bg-white/30 dark:hover:bg-zinc-800/30"
+      }`}
+      onClick={onClick}
+    >
+      {icon}
+      {children}
+    </button>
   );
 }

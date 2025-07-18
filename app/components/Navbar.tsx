@@ -21,39 +21,115 @@ export default function Navbar() {
   return (
     <header
       className={clsx(
-        "sticky top-0 z-50 backdrop-blur-md transition-colors duration-300",
+        "sticky top-0 z-50 backdrop-blur-lg transition-all duration-300",
         isScrolled
-          ? "bg-gray-300/70 dark:bg-zinc-900/70 border-b border-gray-400 dark:border-zinc-800 shadow-sm"
-          : "bg-gray-300 dark:bg-zinc-900 border-b border-transparent"
+          ? "bg-white/10 dark:bg-zinc-900/30 border-b border-white/20 dark:border-zinc-800/30 shadow-lg"
+          : "bg-gray-300/30 dark:bg-zinc-900/20 border-b border-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-600">
+        <Link 
+          href="/" 
+          className="text-2xl font-bold text-blue-600 dark:text-blue-500 relative group"
+        >
           <span className="inline lg:hidden">Br.</span>
           <span className="hidden lg:inline">Breye Foka L.</span>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-4 font-bold">
-          <Link href="/About" className="hover:bg-gray-300 dark:hover:bg-zinc-900 px-3 py-2 rounded-md">About</Link>
-          <Link href="/mission" className="hover:bg-gray-300 dark:hover:bg-zinc-900 px-3 py-2 rounded-md">Mission</Link>
-          <Link href="/skillset" className="hover:bg-gray-300 dark:hover:bg-zinc-900 px-3 py-2 rounded-md">Skillset</Link>
-          <Link href="/projects" className="hover:bg-gray-300 dark:hover:bg-zinc-900 px-3 py-2 rounded-md">Projects</Link>
-          <Link href="/posts" className="hover:bg-gray-300 dark:hover:bg-zinc-900 px-3 py-2 rounded-md">Blog</Link>
+        <nav className="hidden md:flex items-center space-x-6 font-medium">
+          <Link 
+            href="/About" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            About
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/mission" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Mission
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/skillset" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Skillset
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/projects" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Projects
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/posts" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Blog
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/contact" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Contact
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
 
           {/* Other Dropdown */}
           <div className="relative">
             <button
               onClick={() => setDropdownOpen(!isDropdownOpen)}
-              className="hover:bg-gray-300 dark:hover:bg-zinc-700 px-3 py-2 rounded-md flex items-center"
+              className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group flex items-center"
             >
-              Other <span className="ml-1">▾</span>
+              Other 
+              <svg
+                className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${
+                  isDropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
             </button>
             {isDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-gray-300 dark:bg-zinc-800 border border-gray-400 dark:border-zinc-700 rounded-lg shadow-md z-20">
-                <Link href="/talks" className="block px-4 py-2 hover:bg-gray-300 dark:hover:bg-zinc-900">🎙️ Talks</Link>
-                <Link href="/achievements" className="block px-4 py-2 hover:bg-gray-300 dark:hover:bg-zinc-900">✔️ Achievements</Link>
+              <div className="absolute left-0 mt-2 w-48 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md border border-gray-300/30 dark:border-zinc-700/30 rounded-lg shadow-xl z-50 overflow-hidden">
+                <Link 
+                  href="/talks" 
+                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  🎙️ Talks
+                </Link>
+                <Link 
+                  href="/achievements" 
+                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  🏆 Achievements
+                </Link>
+                <Link 
+                  href="/gallery" 
+                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                  onClick={() => setDropdownOpen(false)}
+                >
+                  🖼️ Gallery
+                </Link>
               </div>
             )}
           </div>
@@ -79,18 +155,76 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-300 dark:bg-zinc-900 border-t border-gray-400 dark:border-zinc-800 px-4 py-4 space-y-2">
-          <Link href="/About" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">About</Link>
-          <Link href="/mission" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Mission</Link>
-          <Link href="/skillset" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Skillset</Link>
-          <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Projects</Link>
-          <Link href="/posts" onClick={() => setMobileMenuOpen(false)} className="block font-semibold">Blog</Link>
+        <div className="md:hidden bg-white/10 dark:bg-zinc-900/10 backdrop-blur-lg border-t border-white/20 dark:border-zinc-800/20 px-4 py-4 space-y-2 animate-in slide-in-from-top duration-300">
+          <Link 
+            href="/About" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            About
+          </Link>
+          <Link 
+            href="/mission" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            Mission
+          </Link>
+          <Link 
+            href="/skillset" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            Skillset
+          </Link>
+          <Link 
+            href="/projects" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            Projects
+          </Link>
+          <Link 
+            href="/posts" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            Blog
+          </Link>
+          <Link 
+            href="/contact" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            Contact
+          </Link>
           {/* Other Pages */}
           <details className="mt-2">
-            <summary className="cursor-pointer font-semibold">Other</summary>
-            <div className="pl-4 mt-2 space-y-1 text-sm">
-              <Link href="/talks" onClick={() => setMobileMenuOpen(false)}>🎙️ Talks</Link>
-              <Link href="/achievements" onClick={() => setMobileMenuOpen(false)}>✔️ Achievements</Link>
+            <summary className="cursor-pointer font-medium py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200">
+              Other
+            </summary>
+            <div className="pl-6 mt-2 space-y-2">
+              <Link 
+                href="/talks" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+              >
+                🎙️ Talks
+              </Link>
+              <Link 
+                href="/achievements" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+              >
+                🏆 Achievements
+              </Link>
+              <Link 
+                href="/gallery" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+              >
+                🖼️ Gallery
+              </Link>
             </div>
           </details>
         </div>
