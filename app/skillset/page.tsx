@@ -108,7 +108,10 @@ const skills: SkillGroup[] = [
       { name: 'Python', icon: <SiPython className="text-blue-500" />, level: 90, categories: ['backend', 'ai'] },
       { name: 'C++', icon: <SiCplusplus className="text-blue-600" />, level: 75, categories: ['backend'] },
       { name: 'HTML', icon: <SiHtml5 className="text-orange-500" />, level: 95, categories: ['frontend'] },
-      { name: 'CSS', icon: <SiCss3 className="text-blue-400" />, level: 90, categories: ['frontend'] }
+      { name: 'CSS', icon: <SiCss3 className="text-blue-400" />, level: 90, categories: ['frontend'] },
+      { name: 'R', icon: <FaCode className="text-blue-500" />, level: 70, categories: ['ai'] },
+      { name: 'Rust', icon: <FaCode className="text-orange-600" />, level: 60, categories: ['backend'] },
+      { name: 'Go', icon: <FaCode className="text-blue-400" />, level: 65, categories: ['backend'] }
     ]
   },
   {
@@ -117,7 +120,11 @@ const skills: SkillGroup[] = [
       { name: 'React', icon: <FaReact className="text-blue-400" />, level: 90, categories: ['frontend'] },
       { name: 'Next.js', icon: <SiNextdotjs />, level: 85, categories: ['frontend'] },
       { name: 'Vue.js', icon: <SiVuedotjs className="text-green-500" />, level: 75, categories: ['frontend'] },
-      { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-blue-400" />, level: 90, categories: ['frontend'] }
+      { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-blue-400" />, level: 90, categories: ['frontend'] },
+      { name: 'Redux', icon: <FaCode className="text-purple-500" />, level: 80, categories: ['frontend'] },
+      { name: 'GraphQL', icon: <FaCode className="text-pink-500" />, level: 75, categories: ['frontend', 'backend'] },
+      { name: 'Framer Motion', icon: <FaCode className="text-purple-400" />, level: 70, categories: ['frontend'] },
+      { name: 'Chakra UI', icon: <FaCode className="text-teal-500" />, level: 80, categories: ['frontend'] }
     ]
   },
   {
@@ -128,14 +135,21 @@ const skills: SkillGroup[] = [
       { name: 'Flask', icon: <SiFlask />, level: 85, categories: ['backend'] },
       { name: 'MongoDB', icon: <SiMongodb className="text-green-500" />, level: 80, categories: ['backend'] },
       { name: 'PostgreSQL', icon: <SiPostgresql className="text-blue-500" />, level: 75, categories: ['backend'] },
-      { name: 'SQLite', icon: <SiSqlite className="text-blue-400" />, level: 85, categories: ['backend'] }
+      { name: 'SQLite', icon: <SiSqlite className="text-blue-400" />, level: 85, categories: ['backend'] },
+      { name: 'Express.js', icon: <FaNodeJs className="text-gray-500" />, level: 85, categories: ['backend'] },
+      { name: 'FastAPI', icon: <FaCode className="text-teal-500" />, level: 75, categories: ['backend'] },
+      { name: 'Redis', icon: <FaDatabase className="text-red-500" />, level: 70, categories: ['backend'] },
+      { name: 'Firebase', icon: <FaDatabase className="text-yellow-500" />, level: 80, categories: ['backend'] }
     ]
   },
   {
     title: 'Mobile Development',
     items: [
       { name: 'Flutter', icon: <SiFlutter className="text-blue-400" />, level: 70, categories: ['mobile'] },
-      { name: 'Swift', icon: <SiSwift className="text-orange-500" />, level: 60, categories: ['mobile'] }
+      { name: 'Swift', icon: <SiSwift className="text-orange-500" />, level: 60, categories: ['mobile'] },
+      { name: 'React Native', icon: <FaReact className="text-blue-400" />, level: 75, categories: ['mobile'] },
+      { name: 'Kotlin', icon: <FaCode className="text-purple-500" />, level: 65, categories: ['mobile'] },
+      { name: 'Expo', icon: <FaCode className="text-black dark:text-white" />, level: 70, categories: ['mobile'] }
     ]
   },
   {
@@ -150,7 +164,11 @@ const skills: SkillGroup[] = [
       { name: 'Plotly', icon: <SiPlotly className="text-blue-400" />, level: 80, categories: ['ai'] },
       { name: 'Jupyter', icon: <SiJupyter className="text-orange-500" />, level: 90, categories: ['ai', 'tools'] },
       { name: 'Kaggle', icon: <SiKaggle className="text-blue-400" />, level: 75, categories: ['ai', 'tools'] },
-      { name: 'Google Colab', icon: <SiGooglecolab className="text-yellow-500" />, level: 85, categories: ['ai', 'tools'] }
+      { name: 'Google Colab', icon: <SiGooglecolab className="text-yellow-500" />, level: 85, categories: ['ai', 'tools'] },
+      { name: 'OpenCV', icon: <FaCode className="text-green-500" />, level: 75, categories: ['ai'] },
+      { name: 'Hugging Face', icon: <FaCode className="text-yellow-400" />, level: 70, categories: ['ai'] },
+      { name: 'NLTK', icon: <FaCode className="text-green-400" />, level: 75, categories: ['ai'] },
+      { name: 'spaCy', icon: <FaCode className="text-blue-400" />, level: 70, categories: ['ai'] }
     ]
   },
   {
@@ -159,7 +177,22 @@ const skills: SkillGroup[] = [
       { name: 'Adobe Photoshop', icon: <SiAdobephotoshop className="text-blue-600" />, level: 70, categories: ['design'] },
       { name: 'Adobe Illustrator', icon: <SiAdobeillustrator className="text-orange-500" />, level: 65, categories: ['design'] },
       { name: 'Canva', icon: <SiCanva className="text-blue-400" />, level: 85, categories: ['design'] },
-      { name: 'Figma', icon: <FaFigma className="text-purple-500" />, level: 75, categories: ['design'] }
+      { name: 'Figma', icon: <FaFigma className="text-purple-500" />, level: 75, categories: ['design'] },
+      { name: 'Blender', icon: <FaCode className="text-orange-500" />, level: 60, categories: ['design'] },
+      { name: 'After Effects', icon: <FaCode className="text-blue-700" />, level: 55, categories: ['design'] },
+      { name: 'Sketch', icon: <FaCode className="text-yellow-500" />, level: 65, categories: ['design'] },
+      { name: 'Adobe XD', icon: <FaCode className="text-pink-500" />, level: 70, categories: ['design'] }
+    ]
+  },
+  {
+    title: 'Cloud & DevOps',
+    items: [
+      { name: 'AWS', icon: <FaServer className="text-orange-400" />, level: 75, categories: ['backend', 'tools'] },
+      { name: 'Docker', icon: <FaCode className="text-blue-500" />, level: 80, categories: ['backend', 'tools'] },
+      { name: 'Kubernetes', icon: <FaCode className="text-blue-600" />, level: 65, categories: ['backend', 'tools'] },
+      { name: 'CI/CD', icon: <FaCode className="text-green-500" />, level: 75, categories: ['tools'] },
+      { name: 'Google Cloud', icon: <FaCode className="text-red-400" />, level: 70, categories: ['backend', 'tools'] },
+      { name: 'Azure', icon: <FaCode className="text-blue-500" />, level: 65, categories: ['backend', 'tools'] }
     ]
   },
   {
@@ -168,7 +201,10 @@ const skills: SkillGroup[] = [
       { name: 'Arduino', icon: <SiArduino className="text-teal-500" />, level: 80, categories: ['other'] },
       { name: 'Raspberry Pi', icon: <SiRaspberrypi className="text-red-500" />, level: 75, categories: ['other'] },
       { name: 'KiCad', icon: <SiKicad />, level: 60, categories: ['other'] },
-      { name: 'Home Assistant', icon: <SiHomeassistant className="text-blue-400" />, level: 70, categories: ['other'] }
+      { name: 'Home Assistant', icon: <SiHomeassistant className="text-blue-400" />, level: 70, categories: ['other'] },
+      { name: 'ESP32/ESP8266', icon: <FaCode className="text-yellow-500" />, level: 75, categories: ['other'] },
+      { name: 'Circuit Design', icon: <FaCode className="text-green-500" />, level: 65, categories: ['other'] },
+      { name: 'IoT Protocols', icon: <FaNetworkWired className="text-blue-500" />, level: 70, categories: ['other'] }
     ]
   },
   {
@@ -178,24 +214,24 @@ const skills: SkillGroup[] = [
       { name: 'Linux', icon: <FaLinux />, level: 85, categories: ['tools'] },
       { name: 'Insomnia', icon: <SiInsomnia className="text-purple-500" />, level: 80, categories: ['tools'] },
       { name: 'Notion', icon: <SiNotion />, level: 85, categories: ['tools'] },
-      { name: 'VMware', icon: <SiVmware className="text-blue-500" />, level: 70, categories: ['tools'] }
+      { name: 'VMware', icon: <SiVmware className="text-blue-500" />, level: 70, categories: ['tools'] },
+      { name: 'VS Code', icon: <FaCode className="text-blue-500" />, level: 95, categories: ['tools'] },
+      { name: 'Jira', icon: <FaCode className="text-blue-500" />, level: 80, categories: ['tools'] },
+      { name: 'Postman', icon: <FaCode className="text-orange-500" />, level: 85, categories: ['tools'] },
+      { name: 'npm/yarn', icon: <FaCode className="text-red-500" />, level: 90, categories: ['tools'] },
+      { name: 'Webpack', icon: <FaCode className="text-blue-400" />, level: 75, categories: ['tools'] }
     ]
   },
   {
     title: 'Game Development',
     items: [
       { name: 'Unity', icon: <FaUnity />, level: 65, categories: ['other'] },
-      { name: 'Godot', icon: <SiGodotengine className="text-blue-400" />, level: 60, categories: ['other'] }
+      { name: 'Godot', icon: <SiGodotengine className="text-blue-400" />, level: 60, categories: ['other'] },
+      { name: 'Unreal Engine', icon: <FaCode className="text-blue-500" />, level: 50, categories: ['other'] },
+      { name: 'Phaser.js', icon: <FaCode className="text-green-500" />, level: 70, categories: ['other'] },
+      { name: 'WebGL', icon: <FaCode className="text-red-500" />, level: 65, categories: ['other'] }
     ]
   },
-  {
-    title: 'Cybersecurity',
-    items: [
-      { name: 'Metasploit', icon: <SiMetasploit className="text-red-500" />, level: 65, categories: ['other'] },
-      { name: 'Burp Suite', icon: <SiBurpsuite className="text-orange-500" />, level: 60, categories: ['other'] },
-      { name: 'Wireshark', icon: <SiWireshark className="text-blue-400" />, level: 70, categories: ['other'] }
-    ]
-  }
 ];
 
 // Animation variants
