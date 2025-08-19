@@ -5,10 +5,12 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { FaGraduationCap, FaTools, FaCode, FaBrain, FaGlobe, FaLaptopCode, FaUserTie, FaRegLightbulb, FaLanguage, FaPlane, FaMusic, FaBook, FaGamepad, FaFilm, FaFlask, FaChess } from 'react-icons/fa';
+import { FaGraduationCap, FaTools, FaCode, FaBrain, FaGlobe, FaLaptopCode, FaUserTie, FaRegLightbulb, FaLanguage, FaPlane, FaMusic, FaBook, FaGamepad, FaFilm, FaFlask, FaChess, FaRobot, FaLaptop, FaWrench, FaHandshake, FaPuzzlePiece, FaUsers, FaHeadphones, FaMapMarkerAlt, FaChurch, FaBolt, FaMosque, FaCog } from 'react-icons/fa';
 import { MdTravelExplore } from 'react-icons/md';
 import { AiOutlineZhihu } from "react-icons/ai";
 import { FcDiploma2, FcElectronics, FcGraduationCap } from "react-icons/fc";
+import { HiChartBar } from 'react-icons/hi';
+import { GiTowerBridge } from 'react-icons/gi';
 
 // Animation variants
 const fadeIn = {
@@ -134,11 +136,11 @@ export default function About() {
               <span>Online courses in electronics, networking, pentesting, IoT, web dev, data science, and cybersecurity</span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-500 mr-2">🧠</span>
+              <FaBrain className="text-blue-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
               <span>Self-taught robotics and electronics through tinkering</span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-500 mr-2">💥</span>
+              <FaBolt className="text-blue-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
               <span>Strong background in math, physics, and chemistry from high school</span>
             </li>
           </ul>
@@ -165,13 +167,13 @@ export default function About() {
           <p className="mb-3 sm:mb-4 text-sm sm:text-base text-gray-700 dark:text-gray-300">Things I spend most of my time learning or doing:</p>
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {[
-              { name: "Machine Learning", icon: "🤖", color: "from-blue-500 to-purple-500" },
-              { name: "Data Science", icon: "📊", color: "from-green-500 to-teal-500" },
-              { name: "Competitive Programming", icon: "💻", color: "from-yellow-500 to-amber-500" },
-              { name: "Robotics", icon: "🦾", color: "from-indigo-500 to-blue-500" },
-              { name: "Software Development", icon: "", color: "from-indigo-500 to-blue-500" },
+              { name: "Machine Learning", icon: <FaRobot />, color: "from-blue-500 to-purple-500" },
+              { name: "Data Science", icon: <HiChartBar />, color: "from-green-500 to-teal-500" },
+              { name: "Competitive Programming", icon: <FaLaptop />, color: "from-yellow-500 to-amber-500" },
+              { name: "Robotics", icon: <FaCog />, color: "from-indigo-500 to-blue-500" },
+              { name: "Software Development", icon: <FaCode />, color: "from-indigo-500 to-blue-500" },
               { name: "Electronics", icon: <FcElectronics />, color: "from-indigo-500 to-blue-500" },
-              { name: "Chess", icon: "♟️", color: "from-green-500 to-emerald-500" }
+              { name: "Chess", icon: <FaChess />, color: "from-green-500 to-emerald-500" }
             ].map((interest, index) => (
               <motion.div 
                 key={index}
@@ -199,7 +201,7 @@ export default function About() {
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-gray-700 dark:text-gray-300">
             <div>
               <h3 className="text-lg sm:text-xl font-semibold flex items-center">
-                <span className="text-purple-500 mr-2">🔧</span>
+                <FaWrench className="text-purple-500 text-xl mr-2" />
                 Freelance Work
               </h3>
               <ul className="list-disc list-inside ml-4 sm:ml-6 mt-1 sm:mt-2">
@@ -210,7 +212,7 @@ export default function About() {
             </div>
             <div>
               <h3 className="text-lg sm:text-xl font-semibold flex items-center">
-                <span className="text-green-500 mr-2">🤝</span>
+                <FaHandshake className="text-green-500 text-xl mr-2" />
                 Mentoring & Support
               </h3>
               <p className="ml-4 sm:ml-6 mt-1 sm:mt-2">
@@ -244,19 +246,19 @@ export default function About() {
           </div>
           <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
             <li className="flex items-start">
-              <span className="text-amber-500 mr-2">🧩</span>
+              <FaPuzzlePiece className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
               <span>I solve problems by digging deep and understanding the "why"</span>
             </li>
             <li className="flex items-start">
-              <span className="text-amber-500 mr-2">👥</span>
+              <FaUsers className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
               <span>I work well alone, but I enjoy building with a small team</span>
             </li>
             <li className="flex items-start">
-              <span className="text-amber-500 mr-2">🎧</span>
+              <FaHeadphones className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
               <span>I recharge with music, sports, memes, books, and naps</span>
             </li>
             <li className="flex items-start">
-              <span className="text-amber-500 mr-2">📍</span>
+              <FaMapMarkerAlt className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
               <span>I don't over-plan — I adjust as I go</span>
             </li>
           </ul>
@@ -281,7 +283,7 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <span className="text-xl mr-2">🗼</span>
+                  <GiTowerBridge className="text-xl mr-2 text-blue-600" />
                   <span className="font-semibold text-gray-900 dark:text-white">French</span>
                 </div>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Native</span>
@@ -304,7 +306,7 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <span className="text-xl mr-2">📚</span>
+                  <FaBook className="text-xl mr-2 text-blue-600" />
                   <span className="font-semibold text-gray-900 dark:text-white">English</span>
                 </div>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Fluent</span>
@@ -327,7 +329,7 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <span className="text-xl mr-2">🕌</span>
+                  <FaMosque className="text-xl mr-2 text-green-600" />
                   <span className="font-semibold text-gray-900 dark:text-white">Arabic</span>
                 </div>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Intermediate</span>
@@ -350,7 +352,7 @@ export default function About() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
-                  <span className="text-xl mr-2">⛪</span>
+                  <FaChurch className="text-xl mr-2 text-red-600" />
                   <span className="font-semibold text-gray-900 dark:text-white">Russian</span>
                 </div>
                 <span className="text-sm text-gray-700 dark:text-gray-300">Elementary</span>

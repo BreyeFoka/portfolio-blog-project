@@ -4,9 +4,9 @@ import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import clsx from "clsx";
 import { HiOutlineMenu, HiX } from "react-icons/hi";
+import { FaMicrophone, FaTrophy, FaImage } from "react-icons/fa";
 
 export default function Navbar() {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -82,57 +82,27 @@ export default function Navbar() {
             Contact
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
           </Link>
-
-          {/* Other Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => setDropdownOpen(!isDropdownOpen)}
-              className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group flex items-center"
-            >
-              Other 
-              <svg
-                className={`ml-1 h-4 w-4 transform transition-transform duration-200 ${
-                  isDropdownOpen ? "rotate-180" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-white/80 dark:bg-zinc-800/80 backdrop-blur-md border border-gray-300/30 dark:border-zinc-700/30 rounded-lg shadow-xl z-50 overflow-hidden">
-                <Link 
-                  href="/talks" 
-                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  🎙️ Talks
-                </Link>
-                <Link 
-                  href="/achievements" 
-                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  🏆 Achievements
-                </Link>
-                <Link 
-                  href="/gallery" 
-                  className="block px-4 py-2 text-gray-900 dark:text-white hover:bg-blue-500/10 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  🖼️ Gallery
-                </Link>
-              </div>
-            )}
-          </div>
+          <Link 
+            href="/talks" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Talks
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/achievements" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Achievements
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
+          <Link 
+            href="/gallery" 
+            className="relative py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200 group"
+          >
+            Gallery
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-500 transition-all duration-200 group-hover:w-full"></span>
+          </Link>
         </nav>
 
         {/* Right: Theme toggle + Hamburger */}
@@ -198,35 +168,30 @@ export default function Navbar() {
           >
             Contact
           </Link>
-          {/* Other Pages */}
-          <details className="mt-2">
-            <summary className="cursor-pointer font-medium py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200">
-              Other
-            </summary>
-            <div className="pl-6 mt-2 space-y-2">
-              <Link 
-                href="/talks" 
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
-              >
-                🎙️ Talks
-              </Link>
-              <Link 
-                href="/achievements" 
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
-              >
-                🏆 Achievements
-              </Link>
-              <Link 
-                href="/gallery" 
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 px-3 text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
-              >
-                🖼️ Gallery
-              </Link>
-            </div>
-          </details>
+          <Link 
+            href="/talks" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            <FaMicrophone className="inline mr-2" />
+            Talks
+          </Link>
+          <Link 
+            href="/achievements" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            <FaTrophy className="inline mr-2" />
+            Achievements
+          </Link>
+          <Link 
+            href="/gallery" 
+            onClick={() => setMobileMenuOpen(false)} 
+            className="block py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-500 transition-colors duration-200"
+          >
+            <FaImage className="inline mr-2" />
+            Gallery
+          </Link>
         </div>
       )}
     </header>

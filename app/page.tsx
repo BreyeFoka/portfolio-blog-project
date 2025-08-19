@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { HiArrowRight } from 'react-icons/hi';
 import { FiGithub, FiMail, FiLinkedin, FiFile, FiDownload } from 'react-icons/fi';
 import { HiLocationMarker } from 'react-icons/hi';
+import { FaHandPaper } from 'react-icons/fa';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -75,13 +76,11 @@ export default function HomePage() {
             className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 sm:mb-6 flex items-center justify-center gap-2"
           >
             Hi!
-            <span
-              className="inline-block animate-wiggle"
+            <FaHandPaper
+              className="inline-block animate-wiggle text-yellow-500"
               role="img"
               aria-label="Waving hand"
-            >
-              👋
-            </span>
+            />
             <span className="sr-only">Waving hand</span>
           </motion.h1>
 
