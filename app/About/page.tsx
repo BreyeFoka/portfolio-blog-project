@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { FaGraduationCap, FaTools, FaCode, FaBrain, FaGlobe, FaLaptopCode, FaUserTie, FaRegLightbulb, FaLanguage, FaPlane, FaMusic, FaBook, FaGamepad, FaFilm, FaFlask, FaChess, FaRobot, FaLaptop, FaWrench, FaHandshake, FaPuzzlePiece, FaUsers, FaHeadphones, FaMapMarkerAlt, FaChurch, FaBolt, FaMosque, FaCog } from 'react-icons/fa';
+import { FaGraduationCap, FaTools, FaCode, FaBrain, FaGlobe, FaLaptopCode, FaUserTie, FaRegLightbulb, FaLanguage, FaPlane, FaMusic, FaBook, FaGamepad, FaFilm, FaFlask, FaChess, FaRobot, FaLaptop, FaWrench, FaHandshake, FaPuzzlePiece, FaUsers, FaHeadphones, FaMapMarkerAlt, FaChurch, FaBolt, FaMosque, FaCog, FaAtom, FaChartBar } from 'react-icons/fa';
 import { MdTravelExplore } from 'react-icons/md';
 import { AiOutlineZhihu } from "react-icons/ai";
 import { FcDiploma2, FcElectronics, FcGraduationCap } from "react-icons/fc";
 import { HiChartBar } from 'react-icons/hi';
 import { GiTowerBridge } from 'react-icons/gi';
+import TravelMap from '../components/MapComponenets';
 
 // Animation variants
 const fadeIn = {
@@ -58,7 +59,7 @@ export default function About() {
           className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
           variants={fadeIn}
         >
-          Computer Science undergraduate who spends most of his time figuring out how things work — then breaking and fixing them.
+          Computer Science undergraduate who spends most of his time figuring out how things work — then breaking and fixing them back for fun.
         </motion.p>
       </motion.div>
 
@@ -88,6 +89,7 @@ export default function About() {
               <p>
                 People say I can crack a bug and a joke in the same breath. I take tech seriously, but not myself. My family keeps me grounded, and I'm aiming to get really good at what I do — and help others do the same.
               </p>
+              <p>For Now i won't say i am very good at it but In time I TRUST</p>
             </div>
             <div className="mt-5 sm:mt-6 flex flex-wrap justify-center md:justify-start gap-3">
               <Link href="/projects" passHref>
@@ -96,7 +98,7 @@ export default function About() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  View Projects
+                  Take a look at My Projects
                 </motion.span>
               </Link>
               <Link href="/skillset" passHref>
@@ -105,7 +107,7 @@ export default function About() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Explore Skills
+                  Explore my Skills
                 </motion.span>
               </Link>
             </div>
@@ -142,6 +144,7 @@ export default function About() {
             <li className="flex items-start">
               <FaBolt className="text-blue-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
               <span>Strong background in math, physics, and chemistry from high school</span>
+              <span>Even though I am done with my  highschool I still  refresh my Math & Physics Skills with online classes</span>
             </li>
           </ul>
           <p className="italic mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
@@ -167,13 +170,14 @@ export default function About() {
           <p className="mb-3 sm:mb-4 text-sm sm:text-base text-gray-700 dark:text-gray-300">Things I spend most of my time learning or doing:</p>
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {[
-              { name: "Machine Learning", icon: <FaRobot />, color: "from-blue-500 to-purple-500" },
+              { name: "Machine Learning", icon: <FaChartBar />, color: "from-blue-500 to-purple-500" },
               { name: "Data Science", icon: <HiChartBar />, color: "from-green-500 to-teal-500" },
               { name: "Competitive Programming", icon: <FaLaptop />, color: "from-yellow-500 to-amber-500" },
-              { name: "Robotics", icon: <FaCog />, color: "from-indigo-500 to-blue-500" },
+              { name: "Robotics", icon: <FaRobot />, color: "from-indigo-500 to-blue-500" },
               { name: "Software Development", icon: <FaCode />, color: "from-indigo-500 to-blue-500" },
-              { name: "Electronics", icon: <FcElectronics />, color: "from-indigo-500 to-blue-500" },
-              { name: "Chess", icon: <FaChess />, color: "from-green-500 to-emerald-500" }
+              { name: "Electronics", icon: <FaTools />, color: "from-indigo-500 to-blue-500" },
+              { name: "Chess", icon: <FaChess />, color: "from-green-500 to-emerald-500" },
+              { name: "Physics", icon: <FaAtom />, color: "from-orange-500 to-yellow-500"}
             ].map((interest, index) => (
               <motion.div 
                 key={index}
@@ -461,8 +465,8 @@ export default function About() {
                 <div>
                   <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Chess</h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    <span className="sm:hidden">Strategic thinking through chess (ELO: 1500)...</span>
-                    <span className="hidden sm:inline">Enjoy strategic thinking through chess with a current ELO rating of 1500. Developing patience and tactical planning skills through regular play.</span>
+                    <span className="sm:hidden">Strategic thinking through chess ...</span>
+                    <span className="hidden sm:inline">Enjoy strategic thinking through chess. Developing patience and tactical planning skills through regular play.</span>
                   </p>
                 </div>
               </div>
@@ -506,77 +510,7 @@ export default function About() {
         </div>
       </motion.div>
 
-      {/* Travel Map Section */}
-      <motion.div 
-        className="mb-12 sm:mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ delay: 0.875, duration: 0.6 }}
-      >
-        <div className="bg-white/20 dark:bg-zinc-800/20 backdrop-blur-sm border border-white/10 dark:border-zinc-700/10 rounded-2xl p-6 sm:p-8 shadow-xl">
-          <div className="flex items-center mb-4 sm:mb-6">
-            <MdTravelExplore className="text-teal-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">My Travels</h2>
-          </div>
-          
-          <p className="mb-4 sm:mb-6 text-sm sm:text-lg text-gray-700 dark:text-gray-300">
-            I'm passionate about exploring different cultures and places. Here's a map of some of the places I've visited:
-          </p>
-          
-          <div className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] rounded-lg overflow-hidden border border-white/20 dark:border-zinc-700/20 mb-4">
-            <div className="absolute inset-0 bg-[url('/world-map-light.svg')] dark:bg-[url('/world-map-dark.svg')] bg-contain bg-no-repeat bg-center opacity-80">
-              {/* Map Pins - Europe */}
-              <div className="absolute top-[33.5%] left-[44.2%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="France"></div>
-              <div className="absolute top-[32.8%] left-[43.6%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Belgium"></div>
-              <div className="absolute top-[32.1%] left-[44.9%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Germany"></div>
-              <div className="absolute top-[33.8%] left-[44.6%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Switzerland"></div>
-              <div className="absolute top-[36.5%] left-[53.9%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Turkey"></div>
-              
-              {/* Map Pins - Africa */}
-              <div className="absolute top-[49.5%] left-[48.9%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Chad"></div>
-              <div className="absolute top-[50.8%] left-[52.6%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Sudan"></div>
-              <div className="absolute top-[53.8%] left-[47.9%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Cameroon"></div>
-              <div className="absolute top-[51.6%] left-[46.2%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Nigeria"></div>
-              <div className="absolute top-[52.1%] left-[44.7%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Benin"></div>
-              <div className="absolute top-[51.8%] left-[44.2%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Togo"></div>
-              <div className="absolute top-[51.8%] left-[42.9%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Ghana"></div>
-              <div className="absolute top-[52.8%] left-[55.2%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Ethiopia"></div>
-              <div className="absolute top-[54.8%] left-[55.9%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Kenya"></div>
-              <div className="absolute top-[55.1%] left-[53.7%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Rwanda"></div>
-              <div className="absolute top-[48.5%] left-[46.2%] w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full pulse-animation" title="Niger"></div>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">
-              Through my travels across Africa and Europe, I've gained valuable insights into different cultures, languages, and ways of thinking that have shaped both my personal and professional perspectives.
-            </p>
-            <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mt-2">
-              My goal is to continue exploring new places while learning from each experience and bringing these diverse perspectives into my work and projects.
-            </p>
-          </div>
-          
-          <style jsx>{`
-            .pulse-animation {
-              animation: pulse 2s infinite;
-              box-shadow: 0 0 0 rgba(255, 0, 0, 0.4);
-            }
-            
-            @keyframes pulse {
-              0% {
-                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
-              }
-              70% {
-                box-shadow: 0 0 0 5px rgba(255, 0, 0, 0);
-              }
-              100% {
-                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
-              }
-            }
-          `}</style>
-        </div>
-      </motion.div>
-      
+      <TravelMap />
       {/* Vision Section */}
       <motion.div 
         className="mb-12 sm:mb-16"
