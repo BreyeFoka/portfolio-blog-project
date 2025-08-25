@@ -510,8 +510,8 @@ export default function About() {
           </div>
         </div>
       </motion.div>
-
-      <TravelMap />
+{/* 
+      <TravelMap /> */}
       {/* Vision Section */}
       <motion.div 
         className="mb-12 sm:mb-16"
