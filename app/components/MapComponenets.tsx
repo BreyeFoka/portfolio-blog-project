@@ -4,7 +4,7 @@ import ReactCountryFlag from "react-country-flag";
 
 interface Country {
   name: string;
-  code: string; // ISO country code (instead of emoji)
+  code: string;
   year: string;
   experience: string;
 }
@@ -31,16 +31,16 @@ const TravelMap = () => {
       { name: 'Turkey', code: 'TR', year: '2020', experience: 'Istanbul\'s rich cultural heritage' },
     ],
     africa: [
-      { name: 'Chad', code: 'TD', year: '2019', experience: 'Saharan landscapes and local communities' },
+      { name: 'Chad', code: 'TD', year: '2019', experience: 'Home Country, Born and Spent most of my time There' },
       { name: 'Sudan', code: 'SD', year: '2020', experience: 'Ancient Nubian archaeology' },
       { name: 'Cameroon', code: 'CM', year: '2021', experience: 'Diverse ecosystems and cultures' },
-      { name: 'Nigeria', code: 'NG', year: '2018', experience: 'Lagos\' vibrant energy and Nollywood' },
-      { name: 'Benin', code: 'BJ', year: '2019', experience: 'Vodou traditions and colonial history' },
+      { name: 'Nigeria', code: 'NG', year: '2018', experience: 'Lagos, Abuja\'s vibrant energy' },
+      { name: 'Benin', code: 'BJ', year: '2019', experience: 'Colonial history & Traditions' },
       { name: 'Togo', code: 'TG', year: '2019', experience: 'Coastal beauty and traditional markets' },
       { name: 'Ghana', code: 'GH', year: '2020', experience: 'Gold Coast heritage and Ashanti culture' },
-      { name: 'Ethiopia', code: 'ET', year: '2021', experience: 'Ancient churches of Lalibela' },
-      { name: 'Kenya', code: 'KE', year: '2022', experience: 'Safari adventures in the Maasai Mara' },
-      { name: 'Rwanda', code: 'RW', year: '2023', experience: 'Mountain gorillas and resilient communities' },
+      { name: 'Ethiopia', code: 'ET', year: '2021', experience: 'lay-over Tourism' },
+      { name: 'Kenya', code: 'KE', year: '2022', experience: 'Safari adventures' },
+      { name: 'Rwanda', code: 'RW', year: '2023', experience: 'Studies' },
       { name: 'Niger', code: 'NE', year: '2018', experience: 'Sahel region and traditional crafts' },
     ]
   };
@@ -131,7 +131,7 @@ const TravelMap = () => {
             <div className="flex justify-center items-center space-x-8 mb-8">
   <div className="flex flex-col items-center">
     <div className="h-16 w-1 bg-gray-400 dark:bg-gray-600 rounded-full" />
-    {renderFlag("CM", "3em")} {/* Example: Home = Cameroon */}
+    {renderFlag("TD", "3em")} {/* Example: Home = Chad */}
     <span className="mt-2 text-sm font-medium">Home</span>
   </div>
   <div className="flex flex-col items-center">
