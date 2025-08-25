@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { FaGraduationCap, FaTools, FaCode, FaBrain, FaGlobe, FaLaptopCode, FaUserTie, FaRegLightbulb, FaLanguage, FaPlane, FaMusic, FaBook, FaGamepad, FaFilm, FaFlask, FaChess, FaRobot, FaLaptop, FaWrench, FaHandshake, FaPuzzlePiece, FaUsers, FaHeadphones, FaMapMarkerAlt, FaChurch, FaBolt, FaMosque, FaCog, FaAtom, FaChartBar } from 'react-icons/fa';
+import { FaGraduationCap, FaTools, FaCode, FaBrain, FaGlobe, FaLaptopCode, FaUserTie, FaRegLightbulb, FaLanguage, FaPlane, FaMusic, FaBook, FaGamepad, FaFilm, FaFlask, FaChess, FaRobot, FaLaptop, FaWrench, FaHandshake, FaPuzzlePiece, FaUsers, FaHeadphones, FaMapMarkerAlt, FaChurch, FaBolt, FaMosque, FaCog, FaAtom, FaChartBar, FaCertificate, FaCalculator } from 'react-icons/fa';
 import { MdTravelExplore } from 'react-icons/md';
 import { AiOutlineZhihu } from "react-icons/ai";
 import { FcDiploma2, FcElectronics, FcGraduationCap } from "react-icons/fc";
@@ -59,7 +59,7 @@ export default function About() {
           className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto"
           variants={fadeIn}
         >
-          Computer Science undergraduate who spends most of his time figuring out how things work — then breaking and fixing them back for fun.
+          Computer Science undergraduate who spends most of his time figuring out how things work.
         </motion.p>
       </motion.div>
 
@@ -84,12 +84,11 @@ export default function About() {
             <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">Breye Foka L.</h2>
             <div className="space-y-3 sm:space-y-4 text-base sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
               <p>
-                I like electronics, coding, and exploring systems. Whether I'm writing scripts, building tools, or messing with networks, I enjoy solving real problems.
+                I like electronics, coding, and I enjoy solving real problems.
               </p>
               <p>
-                People say I can crack a bug and a joke in the same breath. I take tech seriously, but not myself. My family keeps me grounded, and I'm aiming to get really good at what I do — and help others do the same.
+                People say I can crack a bug and a joke in the same breath. I take tech seriously, but not myself. My family keeps me grounded, and I'm aiming to get really good at what I do, and help others do the same.
               </p>
-              <p>For Now i won't say i am very good at it but In time I TRUST</p>
             </div>
             <div className="mt-5 sm:mt-6 flex flex-wrap justify-center md:justify-start gap-3">
               <Link href="/projects" passHref>
@@ -130,29 +129,28 @@ export default function About() {
           </div>
           <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-700 dark:text-gray-300">
             <li className="flex items-start">
-              <FcGraduationCap className="text-xl sm:text-2xl mr-2 sm:mr-3" />
+              <FaGraduationCap className="text-xl sm:text-2xl mr-2 sm:mr-3" />
               <span>Studying Computer Science (Bachelor's 2nd Year)</span>
             </li>
             <li className="flex items-start">
-              <span className="text-blue-500 mr-2"><FcDiploma2 className="text-xl sm:text-2xl" /></span>
-              <span>Online courses in electronics, networking, pentesting, IoT, web dev, data science, and cybersecurity</span>
+              <span className="text-blue-500 mr-2"><FaCertificate className="text-xl sm:text-2xl" /></span>
+              <span>Online courses in IoT, web dev, data science, and cybersecurity</span>
             </li>
             <li className="flex items-start">
               <FaBrain className="text-blue-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
-              <span>Self-taught robotics and electronics through tinkering</span>
+              <span>Self-taught robotics and electronics</span>
             </li>
             <li className="flex items-start">
-              <FaBolt className="text-blue-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
-              <span>Strong background in math, physics, and chemistry from high school</span>
-              <span>Even though I am done with my  highschool I still  refresh my Math & Physics Skills with online classes</span>
+              <FaAtom className="text-blue-500 text-xl sm:text-2xl mr-2 sm:mr-3" />
+              <span>Strong background in math, physics, and chemistry  (Physics and Math Highschool Major)</span>
             </li>
           </ul>
           <p className="italic mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-            I grew up inspired by people who build cool stuff — real and fictional.<br/>
+            I grew up inspired by people who build cool stuff.<br/>
             Now I want to be one of them.
           </p>
           <p className="mt-2 sm:mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-400">
-            I sincerely believe that specialization is for insects, and I want to be a generalist who can adapt to any challenge.
+            As Robert A. Heinlein said, "A human should be good at anything.", and I would like to embody that philosophy.
           </p>
         </motion.div>
 
@@ -170,14 +168,17 @@ export default function About() {
           <p className="mb-3 sm:mb-4 text-sm sm:text-base text-gray-700 dark:text-gray-300">Things I spend most of my time learning or doing:</p>
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {[
-              { name: "Machine Learning", icon: <FaChartBar />, color: "from-blue-500 to-purple-500" },
               { name: "Data Science", icon: <HiChartBar />, color: "from-green-500 to-teal-500" },
-              { name: "Competitive Programming", icon: <FaLaptop />, color: "from-yellow-500 to-amber-500" },
+              { name: "Machine Learning", icon: <FaChartBar />, color: "from-blue-500 to-purple-500" },
               { name: "Robotics", icon: <FaRobot />, color: "from-indigo-500 to-blue-500" },
-              { name: "Software Development", icon: <FaCode />, color: "from-indigo-500 to-blue-500" },
               { name: "Electronics", icon: <FaTools />, color: "from-indigo-500 to-blue-500" },
-              { name: "Chess", icon: <FaChess />, color: "from-green-500 to-emerald-500" },
-              { name: "Physics", icon: <FaAtom />, color: "from-orange-500 to-yellow-500"}
+              { name: "Software Development", icon: <FaCode />, color: "from-indigo-500 to-blue-500" },
+              { name: "Web Development", icon: <FaLaptopCode />, color: "from-purple-500 to-pink-500" },
+              { name: "AI & Automation", icon: <FaBolt />, color: "from-yellow-500 to-orange-500" },
+              { name: "Cybersecurity", icon: <FaCog />, color: "from-red-500 to-pink-500" },
+              { name: "Physics", icon: <FaAtom />, color: "from-orange-500 to-yellow-500" },
+              { name: "Chemistry", icon: <FaFlask />, color: "from-red-500 to-pink-500" },
+              { name: "Mathematics", icon: <FaCalculator />, color: "from-blue-500 to-indigo-500" }
             ].map((interest, index) => (
               <motion.div 
                 key={index}
@@ -214,7 +215,7 @@ export default function About() {
                 <li>Analyzed data for insights and trends</li>
               </ul>
             </div>
-            <div>
+            {/* <div>
               <h3 className="text-lg sm:text-xl font-semibold flex items-center">
                 <FaHandshake className="text-green-500 text-xl mr-2" />
                 Mentoring & Support
@@ -222,7 +223,7 @@ export default function About() {
               <p className="ml-4 sm:ml-6 mt-1 sm:mt-2">
                 I've spent time debugging, explaining code, and mentoring — because that's how I learned too.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className="mt-3 sm:mt-4">
             <Link href="/projects" passHref>
@@ -231,7 +232,7 @@ export default function About() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                See My Project Portfolio
+                See My Projects 
               </motion.span>
             </Link>
           </div>
@@ -255,15 +256,15 @@ export default function About() {
             </li>
             <li className="flex items-start">
               <FaUsers className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
-              <span>I work well alone, but I enjoy building with a small team</span>
+              <span>I work well alone, but I enjoy building with a team</span>
             </li>
             <li className="flex items-start">
               <FaHeadphones className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
-              <span>I recharge with music, sports, memes, books, and naps</span>
+              <span>I recharge with music, podcasts, and books</span>
             </li>
             <li className="flex items-start">
               <FaMapMarkerAlt className="text-amber-500 text-xl mr-2 sm:mr-3 mt-1" />
-              <span>I don't over-plan — I adjust as I go</span>
+              <span>I don't over-plan,  I adjust as I go</span>
             </li>
           </ul>
         </motion.div>
@@ -313,22 +314,22 @@ export default function About() {
                   <FaBook className="text-xl mr-2 text-blue-600" />
                   <span className="font-semibold text-gray-900 dark:text-white">English</span>
                 </div>
-                <span className="text-sm text-gray-700 dark:text-gray-300">Fluent</span>
+                <span className="text-sm text-gray-700 dark:text-gray-300">Advanced (C1, CEFR)</span>
               </div>
               <div className="w-full bg-gray-200 dark:bg-zinc-700 rounded-full h-2.5">
                 <motion.div 
                   className="h-2.5 rounded-full bg-blue-600 dark:bg-blue-500"
                   initial={{ width: 0 }}
-                  animate={{ width: "95%" }}
+                  animate={{ width: "80%" }}
                   transition={{ duration: 1, delay: 0.95 }}
                 />
               </div>
               <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-                <span>~95%</span>
+                <span>~80%</span>
                 <span>Professional Proficiency</span>
               </div>
             </div>
-            
+
             {/* Arabic */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
@@ -441,10 +442,10 @@ export default function About() {
               <div className="flex items-start">
                 <span className="text-yellow-500 text-xl mt-1 mr-3"><FaMusic /></span>
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Music & Drumming</h3>
+                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Music</h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    <span className="sm:hidden">Passionate about music and drums...</span>
-                    <span className="hidden sm:inline">Passionate about music and playing drums. Rhythm is my way of expressing creativity outside of code.</span>
+                    <span className="sm:hidden">Like to listen to Music...</span>
+                    <span className="hidden sm:inline">Passionate about music. Rhythm is my way of expressing creativity outside of code.</span>
                   </p>
                 </div>
               </div>
@@ -452,10 +453,10 @@ export default function About() {
               <div className="flex items-start">
                 <span className="text-blue-500 text-xl mt-1 mr-3"><FaPlane /></span>
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Aviation Enthusiast</h3>
+                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">AvGeek</h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
-                    <span className="sm:hidden">Aviation geek fascinated by aircraft tech...</span>
-                    <span className="hidden sm:inline">An avid aviation geek with a fascination for aircraft technology, flight mechanics, and the airline industry.</span>
+                    <span className="sm:hidden">Aviation geek </span>
+                    <span className="hidden sm:inline">An avid aviation geek dreaming to take the flight controls one day.</span>
                   </p>
                 </div>
               </div>
@@ -479,7 +480,7 @@ export default function About() {
                   <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Reading & Learning</h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                     <span className="sm:hidden">Technical & sci-fi literature reader...</span>
-                    <span className="hidden sm:inline">Avid reader with interests in both technical literature and fiction, particularly enjoying sci-fi that explores futuristic technology.</span>
+                    <span className="hidden sm:inline">Avid reader with interests in both technical literature and fiction, enjoying sci-fi that explores futuristic technology.</span>
                   </p>
                 </div>
               </div>
@@ -487,7 +488,7 @@ export default function About() {
               <div className="flex items-start">
                 <span className="text-red-500 text-xl mt-1 mr-3"><FaFilm /></span>
                 <div>
-                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Science Fiction</h3>
+                  <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Cinema</h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                     <span className="sm:hidden">Sci-fi movies & tech documentaries fan...</span>
                     <span className="hidden sm:inline">Fan of sci-fi movies and documentaries that explore futuristic concepts, space exploration, and technological advancement.</span>
@@ -501,7 +502,7 @@ export default function About() {
                   <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Experiments & Tinkering</h3>
                   <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                     <span className="sm:hidden">Electronics experiments & gadget tinkering...</span>
-                    <span className="hidden sm:inline">Love conducting experiments and tinkering with electronics and gadgets to understand how things work from the inside out.</span>
+                    <span className="hidden sm:inline">Love conducting experiments and tinkering with electronics and gadgets to understang their inner working</span>
                   </p>
                 </div>
               </div>
@@ -525,11 +526,11 @@ export default function About() {
           </div>
           <div className="space-y-3 sm:space-y-4 text-sm sm:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             <p>
-              In a few years, I hope to be working in cybersecurity or data science and earn a pilot license someday, maybe running my own tech company. 
-              I'd love to travel, stay hands-on with tech, and explore new opportunities.
+              In a few years, I hope to be working either in cybersecurity or data science and earn a pilot license someday, maybe running my own tech company. 
+              I'd love to travel, and explore new opportunities.
             </p>
             <p>
-              My bigger goal is to build tools that actually help people where I live — and maybe beyond.
+              My bigger goal is to build tools that actually help people live a better life.
             </p>
           </div>
         </div>
@@ -544,7 +545,7 @@ export default function About() {
       >
         <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-gray-900 dark:text-white">Let's Connect</h2>
         <p className="text-sm sm:text-lg text-gray-700 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Interested in collaborating or just want to say hello? I'm always open to new opportunities and connections.
+          Interested in collaborating or just want to say hello? Feel free to reach out!
         </p>
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
           <Link href="/contact" passHref>
@@ -556,7 +557,7 @@ export default function About() {
               Contact Me
             </motion.span>
           </Link>
-          <Link href="/Resume_Breye_Foka.pdf" target="_blank" passHref>
+          {/* <Link href="/Resume_Breye_Foka.pdf" target="_blank" passHref>
             <motion.span 
               className="inline-block px-6 sm:px-8 py-2.5 sm:py-3 bg-white/10 dark:bg-zinc-700/20 backdrop-blur-sm border border-white/10 dark:border-zinc-700/10 text-gray-900 dark:text-white hover:bg-white/20 dark:hover:bg-zinc-700/30 font-medium rounded-full shadow-lg cursor-pointer text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
@@ -564,7 +565,7 @@ export default function About() {
             >
               Download Resume
             </motion.span>
-          </Link>
+          </Link> */}
         </div>
       </motion.div>
     </div>

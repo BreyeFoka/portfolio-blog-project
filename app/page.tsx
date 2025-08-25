@@ -95,8 +95,8 @@ export default function HomePage() {
             variants={fadeIn}
             className="text-base sm:text-xl text-gray-800 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto"
           >
-            <span className="sm:hidden">CS undergrad & chess enthusiast building innovative solutions...</span>
-            <span className="hidden sm:inline">CS undergrad & chess enthusiast, passionate about building innovative solutions that make a difference...</span>
+            <span className="sm:hidden">CS undergrad &  Tech enthusiast</span>
+            <span className="hidden sm:inline">Part undergrad, part Software Dev., I take a Polymathic approach for my career and learning</span>
           </motion.p>
 
           {/* Location */}
@@ -141,7 +141,7 @@ export default function HomePage() {
             >
               <FiMail className="mr-1 sm:mr-2" /> <span className="hidden sm:inline">Email</span>
             </motion.a>
-            <motion.a
+            {/* <motion.a
               href="/Resume_Breye_Foka.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -150,7 +150,7 @@ export default function HomePage() {
               whileTap={{ scale: 0.97 }}
             >
               <FiFile className="mr-1 sm:mr-2" /> <span className="hidden sm:inline">Resume</span> <FiDownload className="ml-1" size={14} />
-            </motion.a>
+            </motion.a> */}
           </motion.div>
           {/* CTA Buttons */}
           <motion.div
@@ -179,7 +179,7 @@ export default function HomePage() {
         
         {/* Featured Section Previews */}
         <section className="w-full max-w-6xl mx-auto mb-12 sm:mb-16 px-3 sm:px-4">
-          <motion.h2 
+          {/* <motion.h2 
             variants={fadeIn}
             initial="hidden"
             animate="visible"
@@ -193,9 +193,9 @@ export default function HomePage() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-          >
+          > */}
             {/* Project Cards - Just previews */}
-            {[
+            {/* {[
               {
                 title: 'Anime Quest',
                 image: '/images/anime-quest.png',
@@ -260,11 +260,11 @@ export default function HomePage() {
                 <HiArrowRight className="ml-2" />
               </Button>
             </Link>
-          </motion.div>
+          </motion.div> */}
         </section>
 
         {/* Blog Preview */}
-        <section className="w-full max-w-6xl mx-auto mb-16 px-3 sm:px-4">
+        {/* <section className="w-full max-w-6xl mx-auto mb-16 px-3 sm:px-4">
           <motion.h2 
             variants={fadeIn}
             initial="hidden"
@@ -350,7 +350,7 @@ export default function HomePage() {
               </Button>
             </Link>
           </motion.div>
-        </section>
+        </section> */}
       </div>
     </>
   );

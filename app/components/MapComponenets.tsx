@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { MdTravelExplore, MdLocationOn, MdFlag } from 'react-icons/md';
+import ReactCountryFlag from "react-country-flag";
 
 interface Country {
   name: string;
-  flag: string;
+  code: string; // ISO country code (instead of emoji)
   year: string;
   experience: string;
 }
@@ -21,50 +22,39 @@ const TravelMap = () => {
     setIsLoaded(true);
   }, []);
 
-  const visitedCountries = {
+  const visitedCountries: VisitedCountries = {
     europe: [
-      { name: 'France', flag: '🇫🇷', year: '2022', experience: 'Explored Paris and the French Riviera' },
-      { name: 'Belgium', flag: '🇧🇪', year: '2021', experience: 'Discovered Brussels and medieval Bruges' },
-      { name: 'Germany', flag: '🇩🇪', year: '2023', experience: 'Berlin history and Bavarian culture' },
-      { name: 'Switzerland', flag: '🇨🇭', year: '2022', experience: 'Alpine adventures in the Swiss Alps' },
-      { name: 'Turkey', flag: '🇹🇷', year: '2020', experience: 'Istanbul\'s rich cultural heritage' },
+      { name: 'France', code: 'FR', year: '2022', experience: 'Explored Paris and the French Riviera' },
+      { name: 'Belgium', code: 'BE', year: '2021', experience: 'Discovered Brussels and medieval Bruges' },
+      { name: 'Germany', code: 'DE', year: '2023', experience: 'Berlin history and Bavarian culture' },
+      { name: 'Switzerland', code: 'CH', year: '2022', experience: 'Alpine adventures in the Swiss Alps' },
+      { name: 'Turkey', code: 'TR', year: '2020', experience: 'Istanbul\'s rich cultural heritage' },
     ],
     africa: [
-      { name: 'Chad', flag: '🇹🇩', year: '2019', experience: 'Saharan landscapes and local communities' },
-      { name: 'Sudan', flag: '🇸🇩', year: '2020', experience: 'Ancient Nubian archaeology' },
-      { name: 'Cameroon', flag: '🇨🇲', year: '2021', experience: 'Diverse ecosystems and cultures' },
-      { name: 'Nigeria', flag: '🇳🇬', year: '2018', experience: 'Lagos\' vibrant energy and Nollywood' },
-      { name: 'Benin', flag: '🇧🇯', year: '2019', experience: 'Vodou traditions and colonial history' },
-      { name: 'Togo', flag: '🇹🇬', year: '2019', experience: 'Coastal beauty and traditional markets' },
-      { name: 'Ghana', flag: '🇬🇭', year: '2020', experience: 'Gold Coast heritage and Ashanti culture' },
-      { name: 'Ethiopia', flag: '🇪🇹', year: '2021', experience: 'Ancient churches of Lalibela' },
-      { name: 'Kenya', flag: '🇰🇪', year: '2022', experience: 'Safari adventures in the Maasai Mara' },
-      { name: 'Rwanda', flag: '🇷🇼', year: '2023', experience: 'Mountain gorillas and resilient communities' },
-      { name: 'Niger', flag: '🇳🇪', year: '2018', experience: 'Sahel region and traditional crafts' },
+      { name: 'Chad', code: 'TD', year: '2019', experience: 'Saharan landscapes and local communities' },
+      { name: 'Sudan', code: 'SD', year: '2020', experience: 'Ancient Nubian archaeology' },
+      { name: 'Cameroon', code: 'CM', year: '2021', experience: 'Diverse ecosystems and cultures' },
+      { name: 'Nigeria', code: 'NG', year: '2018', experience: 'Lagos\' vibrant energy and Nollywood' },
+      { name: 'Benin', code: 'BJ', year: '2019', experience: 'Vodou traditions and colonial history' },
+      { name: 'Togo', code: 'TG', year: '2019', experience: 'Coastal beauty and traditional markets' },
+      { name: 'Ghana', code: 'GH', year: '2020', experience: 'Gold Coast heritage and Ashanti culture' },
+      { name: 'Ethiopia', code: 'ET', year: '2021', experience: 'Ancient churches of Lalibela' },
+      { name: 'Kenya', code: 'KE', year: '2022', experience: 'Safari adventures in the Maasai Mara' },
+      { name: 'Rwanda', code: 'RW', year: '2023', experience: 'Mountain gorillas and resilient communities' },
+      { name: 'Niger', code: 'NE', year: '2018', experience: 'Sahel region and traditional crafts' },
     ]
   };
 
-  const MapPin = ({ country, position, onClick }: { 
-    country: Country; 
-    position: { x: string; y: string }; 
-    onClick: (country: Country) => void;
-  }) => (
-    <div 
-      className={`absolute w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer transition-all duration-300 ${
-        selectedCountry?.name === country.name ? 'scale-150 z-10' : 'hover:scale-125'
-      }`}
-      style={{ 
-        left: position.x, 
-        top: position.y,
+  const renderFlag = (code: string, size: string = "1.5em") => (
+    <ReactCountryFlag
+      countryCode={code}
+      svg
+      style={{
+        width: size,
+        height: "auto",
       }}
-      onClick={() => onClick(country)}
-      title={country.name}
-    >
-      <div className="relative">
-        <MdLocationOn className="text-red-500 text-xl drop-shadow-lg" />
-        <div className="absolute inset-0 bg-red-500 rounded-full opacity-30 animate-ping"></div>
-      </div>
-    </div>
+      className="rounded-sm shadow-sm animate-wave"
+    />
   );
 
   return (
@@ -77,13 +67,11 @@ const TravelMap = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">My Travels</h2>
         </div>
 
-        {/* Layout: Side-by-side on larger screens */}
         <div className="grid lg:grid-cols-2 gap-8">
-          
-          {/* Text Content - Left Side */}
+          {/* Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-gray-700 dark:text-gray-300">
-              I'm passionate about exploring different cultures and places. Through my travels across Africa and Europe, I've gained valuable insights into different cultures, languages, and ways of thinking.
+              I'm passionate about exploring different cultures and places...
             </p>
 
             {/* Country Lists */}
@@ -105,7 +93,7 @@ const TravelMap = () => {
                       }`}
                     >
                       <div className="flex items-center space-x-2">
-                        <span className="text-lg">{country.flag}</span>
+                        {renderFlag(country.code)}
                         <span className="text-sm font-medium text-gray-900 dark:text-white">{country.name}</span>
                       </div>
                       <div className="text-xs text-gray-600 dark:text-gray-400">{country.year}</div>
@@ -131,7 +119,7 @@ const TravelMap = () => {
                       }`}
                     >
                       <div className="flex items-center space-x-2">
-                        <span className="text-lg">{country.flag}</span>
+                        {renderFlag(country.code)}
                         <span className="text-sm font-medium text-gray-900 dark:text-white">{country.name}</span>
                       </div>
                       <div className="text-xs text-gray-600 dark:text-gray-400">{country.year}</div>
@@ -140,118 +128,51 @@ const TravelMap = () => {
                 </div>
               </div>
             </div>
+            <div className="flex justify-center items-center space-x-8 mb-8">
+  <div className="flex flex-col items-center">
+    <div className="h-16 w-1 bg-gray-400 dark:bg-gray-600 rounded-full" />
+    {renderFlag("CM", "3em")} {/* Example: Home = Cameroon */}
+    <span className="mt-2 text-sm font-medium">Home</span>
+  </div>
+  <div className="flex flex-col items-center">
+    <div className="h-16 w-1 bg-gray-400 dark:bg-gray-600 rounded-full" />
+    {renderFlag("RW", "3em")} {/* Example: Current = Rwanda */}
+    <span className="mt-2 text-sm font-medium">Current</span>
+  </div>
+</div>
 
-            {/* Selected Country Detail */}
+{/* Travel Timeline */}
+<div className="relative border-l border-gray-300 dark:border-gray-600 pl-6 ml-2 mt-8 space-y-6">
+  {[...visitedCountries.africa, ...visitedCountries.europe]
+    .sort((a, b) => parseInt(a.year) - parseInt(b.year))
+    .map((country, index) => (
+      <div key={index} className="relative">
+        <span className="absolute -left-3 flex items-center justify-center w-6 h-6 bg-white dark:bg-gray-800 border border-gray-400 dark:border-gray-600 rounded-full shadow">
+          {renderFlag(country.code, "1.2em")}
+        </span>
+        <div className="p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+          <div className="flex items-center space-x-2">
+            <h4 className="text-sm font-semibold">{country.name}</h4>
+            <span className="text-xs bg-teal-500/20 px-2 py-0.5 rounded-full">{country.year}</span>
+          </div>
+          <p className="text-xs text-gray-600 dark:text-gray-400">{country.experience}</p>
+        </div>
+      </div>
+    ))}
+</div>
+
+            {/* Selected Country */}
             {selectedCountry && (
-              <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 dark:from-teal-400/10 dark:to-blue-400/10 border border-teal-500/20 rounded-xl p-4">
+              <div className="bg-gradient-to-r from-teal-500/10 to-blue-500/10 border border-teal-500/20 rounded-xl p-4">
                 <div className="flex items-center space-x-3 mb-2">
-                  <span className="text-2xl">{selectedCountry.flag}</span>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{selectedCountry.name}</h4>
-                  <span className="text-sm px-2 py-1 bg-teal-500/20 text-teal-700 dark:text-teal-300 rounded-full">
-                    {selectedCountry.year}
-                  </span>
+                  {renderFlag(selectedCountry.code, "2em")}
+                  <h4 className="text-lg font-semibold">{selectedCountry.name}</h4>
+                  <span className="text-sm px-2 py-1 bg-teal-500/20 rounded-full">{selectedCountry.year}</span>
                 </div>
-                <p className="text-sm text-gray-700 dark:text-gray-300">{selectedCountry.experience}</p>
+                <p className="text-sm">{selectedCountry.experience}</p>
               </div>
             )}
           </div>
-
-          {/* Interactive Visual Map - Right Side */}
-          <div className="space-y-4">
-            {/* Animated Flagpoles */}
-            <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 dark:from-green-400/10 dark:to-emerald-400/10 border border-green-500/20 rounded-xl p-6 mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 text-center">Home & Current</h3>
-              <div className="flex justify-center space-x-8">
-                {/* Home Country Flagpole */}
-                <div className="flex flex-col items-center">
-                  <div className="relative">
-                    {/* Flagpole */}
-                    <div className="w-1 h-24 bg-gradient-to-b from-amber-600 to-amber-800 rounded-full shadow-lg"></div>
-                    
-                    {/* Flag */}
-                    <div className="absolute -right-8 top-2 w-12 h-8 bg-gradient-to-r from-blue-600 via-yellow-400 to-red-600 rounded-sm shadow-lg animate-wave origin-left">
-                      <div className="absolute inset-0 flex items-center justify-center text-lg">
-                        🇹🇩
-                      </div>
-                    </div>
-                    
-                    {/* Flagpole Top */}
-                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gold-400 rounded-full shadow"></div>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center font-medium">Chad<br/>(Home)</p>
-                </div>
-
-                {/* Current Country Flagpole */}
-                <div className="flex flex-col items-center">
-                  <div className="relative">
-                    {/* Flagpole */}
-                    <div className="w-1 h-24 bg-gradient-to-b from-amber-600 to-amber-800 rounded-full shadow-lg"></div>
-                    
-                    {/* Flag */}
-                    <div className="absolute -right-8 top-2 w-12 h-8 bg-gradient-to-b from-sky-400 via-yellow-400 to-green-600 rounded-sm shadow-lg animate-wave-delayed origin-left">
-                      <div className="absolute inset-0 flex items-center justify-center text-lg">
-                        🇷🇼
-                      </div>
-                    </div>
-                    
-                    {/* Flagpole Top */}
-                    <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gold-400 rounded-full shadow"></div>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 text-center font-medium">Rwanda<br/>(Current)</p>
-                </div>
-              </div>
-            </div>
-
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Travel Timeline</h3>
-            
-            {/* Visual Timeline */}
-            <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-orange-500"></div>
-              
-              <div className="space-y-4">
-                {[...visitedCountries.europe, ...visitedCountries.africa]
-                  .sort((a, b) => parseInt(b.year) - parseInt(a.year))
-                  .slice(0, 8)
-                  .map((country, index) => (
-                  <div key={country.name} className="relative flex items-center space-x-4 pl-8">
-                    <div className="absolute left-3 w-2 h-2 bg-teal-500 rounded-full border-2 border-white dark:border-zinc-800"></div>
-                    <div className="flex-1 bg-white/10 dark:bg-zinc-700/20 rounded-lg p-3">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <span className="text-lg">{country.flag}</span>
-                          <span className="font-medium text-gray-900 dark:text-white">{country.name}</span>
-                        </div>
-                        <span className="text-xs text-gray-600 dark:text-gray-400">{country.year}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 pt-6">
-              <div className="text-center p-4 bg-blue-500/10 rounded-xl">
-                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                  {visitedCountries.europe.length}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">European Countries</div>
-              </div>
-              <div className="text-center p-4 bg-orange-500/10 rounded-xl">
-                <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">
-                  {visitedCountries.africa.length}
-                </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">African Countries</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Quote */}
-        <div className="mt-8 pt-6 border-t border-white/10 dark:border-zinc-700/10">
-          <p className="text-center text-gray-700 dark:text-gray-300 italic">
-            "My goal is to continue exploring new places while learning from each experience and bringing these diverse perspectives into my work and projects."
-          </p>
         </div>
       </div>
 
@@ -262,26 +183,13 @@ const TravelMap = () => {
           50% { transform: rotateY(0deg) rotateX(-2deg); }
           75% { transform: rotateY(-5deg) rotateX(2deg); }
         }
-        
-        @keyframes wave-delayed {
-          0%, 100% { transform: rotateY(0deg) rotateX(0deg); }
-          25% { transform: rotateY(-5deg) rotateX(-2deg); }
-          50% { transform: rotateY(0deg) rotateX(2deg); }
-          75% { transform: rotateY(5deg) rotateX(-2deg); }
-        }
-        
         .animate-wave {
           animation: wave 3s ease-in-out infinite;
           transform-style: preserve-3d;
         }
-        
-        .animate-wave-delayed {
-          animation: wave-delayed 3s ease-in-out infinite;
-          animation-delay: 0.5s;
-          transform-style: preserve-3d;
-        }
       `}</style>
     </div>
+
   );
 };
 
